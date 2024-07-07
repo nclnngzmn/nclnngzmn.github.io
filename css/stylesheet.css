@@ -496,9 +496,8 @@ img {
 }
 .index-sec04__gallery .certificates-category {
     display: flex;
-    max-width: 500px;
     width: 100%;
-   justify-content: space-between;
+   justify-content: center;
    align-items: center;
 }
 .certificates-category .item {
@@ -510,6 +509,9 @@ img {
     border-radius: 50px;
     cursor: pointer;
     transition: all 0.3s ease;
+}
+.certificates-category span {
+    margin: 0 10px;
 }
 .certificates-category span.active,
 .certificates-category span:hover {
