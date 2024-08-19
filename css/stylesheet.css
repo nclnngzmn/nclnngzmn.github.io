@@ -145,7 +145,6 @@ img {
 /* MAIN VISUAL */
 .mv {
     margin: 0;
-    max-width: 1600px;
     padding: 0;
     width: 100%;
     height: 100%;
@@ -638,7 +637,6 @@ img {
 
 /* SECTION 6 - CONTACT */
 .index-sec06 {
-    max-width: 1600px;
     width: 100%;
     height: 100%;
     background-image: url(../slice/bg-footer.png);
@@ -695,7 +693,7 @@ img {
 }
 
 /* -------------------------- RESPONSIVE STYLES - TABLET -------------------------- */
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 1200px) {
     /* FONTS */
     .h1 {
         font-size: 40px;
