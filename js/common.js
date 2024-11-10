@@ -1,63 +1,34 @@
-//for burger menu
-document.addEventListener('DOMContentLoaded', function () {
-    const burgerMenu = document.querySelector('.burger-menu');
-    const navLayout = document.querySelector('.nav__layout');
+//for scroll effect
+document.addEventListener("DOMContentLoaded", function () {
+    const scrollElements = document.querySelectorAll('.scroll');
 
-    burgerMenu.addEventListener('click', function () {
-        navLayout.classList.toggle('show-nav');
-        burgerMenu.classList.toggle('close');
-
-        document.querySelectorAll('.burger-icon .bar').forEach(function (bar) {
-            bar.classList.toggle('active');
-        });
-    });
-
-    navLayout.forEach(function (link) {
-        link.addEventListener('click', function (event) {
-            event.preventDefault();
-            navLayout.classList.remove('show-nav');
-            burgerMenu.classList.remove('close');
-
-            document.querySelectorAll('.burger-icon .bar').forEach(function (bar) {
-                bar.classList.remove('active');
-            });
-        });
-    });
-
-    document.addEventListener('click', function (event) {
-        if (!navLayout.contains(event.target) && event.target !== burgerMenu) {
-            navLayout.classList.remove('show-nav');
-            burgerMenu.classList.remove('close');
-
-            document.querySelectorAll('.burger-icon .bar').forEach(function (bar) {
-                bar.classList.remove('active');
-            });
-        }
-    });
-
-    function adjustNavLayout() {
-        if (window.innerWidth > 1600) {
-            navLayout.classList.add('show-nav');
-            burgerMenu.classList.remove('close');
+    const observer = new IntersectionObserver((entries, observer) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('active');
         } else {
-            navLayout.classList.remove('show-nav');
-            burgerMenu.classList.remove('close');
-
-            document.querySelectorAll('.burger-icon .bar').forEach(function (bar) {
-                bar.classList.remove('active');
-            });
+          entry.target.classList.remove('active');
         }
-    }
-
-    window.addEventListener('load', adjustNavLayout);
-    window.addEventListener('resize', adjustNavLayout);
+      });
+    }, { threshold: 0.1 }); 
+  
+    scrollElements.forEach(element => observer.observe(element));
 });
 
+//closing nav
+const navLinks = document.querySelectorAll('.nav a');
+const menuToggle = document.getElementById('menuToggle');
+
+ navLinks.forEach(link => {
+    link.addEventListener('click', () => {
+        menuToggle.checked = false;
+    });
+});
 
 //for see more button
 $(document).ready(function(){
     $(".btn-toggle").click(function(){
-        $(this).closest('.index-sec02__layout-item').find(".item-hidden").slideToggle();
+        $(this).closest('.sec02__layout-item').find(".item-hidden").slideToggle();
         $(this).toggleClass('less');
         if ($(this).hasClass('less')) {
             $(this).html('See Less <i class="fas fa-chevron-up"></i>');
@@ -65,6 +36,91 @@ $(document).ready(function(){
             $(this).html('See More <i class="fas fa-chevron-down"></i>');
         }
     });
+});
+
+//for pagination
+document.addEventListener("DOMContentLoaded", function () {
+    const dataList = document.querySelector(".sec03__layout");
+    const pagination = document.getElementById("pagination");
+
+    const itemsPerPage = 6;
+    const dataItems = document.querySelectorAll(".sec03__item");
+    const data = Array.from(dataItems).map(item => item.outerHTML);
+
+    let currentPage = 1;
+
+    function displayData(page) {
+        dataList.innerHTML = "";
+        const start = (page - 1) * itemsPerPage;
+        const end = start + itemsPerPage;
+        const pageData = data.slice(start, end);
+
+        pageData.forEach(item => {
+            const li = document.createElement("li");
+            li.innerHTML = item;
+            dataList.appendChild(li);
+        });
+    }
+
+    function createPaginationButtons() {
+        const totalPages = Math.ceil(data.length / itemsPerPage);
+
+        const prevButton = document.createElement("a");
+        prevButton.href = "#sec03__layout";
+        prevButton.innerHTML = '<i class="fa-solid fa-arrow-left"></i>';
+        prevButton.classList.add("page-link");
+        prevButton.addEventListener("click", function () {
+            if (currentPage > 1) {
+                currentPage--;
+                displayData(currentPage);
+                updateActiveLink();
+            }
+        });
+        pagination.appendChild(prevButton);
+
+        for (let i = 1; i <= totalPages; i++) {
+            const button = document.createElement("a");
+            button.href = "#sec03__layout";
+            button.textContent = i;
+            button.classList.add("page-link");
+            button.addEventListener("click", function () {
+                currentPage = i;
+                displayData(currentPage);
+                updateActiveLink();
+            });
+            pagination.appendChild(button);
+        }
+
+        const nextButton = document.createElement("a");
+        nextButton.href = "#sec03__layout";
+        nextButton.innerHTML = '<i class="fa-solid fa-arrow-right"></i>';
+        nextButton.classList.add("page-link");
+        nextButton.addEventListener("click", function () {
+            if (currentPage < totalPages) {
+                currentPage++;
+                displayData(currentPage);
+                updateActiveLink();
+            }
+        });
+        pagination.appendChild(nextButton);
+
+        function updateActiveLink() {
+            const links = pagination.querySelectorAll('.page-link');
+            links.forEach(link => link.classList.remove('active'));
+            const activeLink = Array.from(links).find(link => link.textContent == currentPage);
+            if (activeLink) {
+                activeLink.classList.add('active');
+            }
+
+            prevButton.style.display = (currentPage === 1) ? "none" : "inline-block";
+            nextButton.style.display = (currentPage === totalPages) ? "none" : "inline-block";
+        }
+
+        updateActiveLink(); 
+    }
+
+    createPaginationButtons();
+    displayData(currentPage);
 });
 
 //for filtering certificates categories
@@ -77,6 +133,15 @@ document.addEventListener("DOMContentLoaded", function () {
     const previewDescription = document.querySelector(".preview-description");
     const closeButton = document.querySelector(".close-preview");
 
+    const overlay = document.createElement("div");
+    overlay.classList.add("preview-overlay");
+    document.body.appendChild(overlay);
+
+    function closeModal() {
+        previewBox.style.display = "none";
+        overlay.style.display = "none";
+    }
+
     certificates.addEventListener("click", (event) => {
         if (event.target.classList.contains("item")) {
             document.querySelectorAll(".item").forEach((item) => {
@@ -84,16 +149,11 @@ document.addEventListener("DOMContentLoaded", function () {
             });
 
             event.target.classList.add("active");
-
             const filter = event.target.getAttribute("data-name");
 
             images.forEach((image, index) => {
                 const imageFilter = image.parentElement.getAttribute("data-name");
-                if (filter === "all" || filter === imageFilter) {
-                    image.parentElement.style.display = "block";
-                } else {
-                    image.parentElement.style.display = "none";
-                }
+                image.parentElement.style.display = (filter === "all" || filter === imageFilter) ? "block" : "none";
             });
         }
     });
@@ -105,13 +165,11 @@ document.addEventListener("DOMContentLoaded", function () {
             previewImage.src = imgSrc;
             previewDescription.textContent = description;
             previewBox.style.display = "block";
+            overlay.style.display = "block";
         });
     });
 
-    closeButton.addEventListener("click", () => {
-        previewBox.style.display = "none";
-    });
+    closeButton.addEventListener("click", closeModal);
+    overlay.addEventListener("click", closeModal);
 });
-
-  
 
