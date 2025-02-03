@@ -482,7 +482,9 @@ img {
 }
 .sec03__layout {
     padding: 100px 0;
-    flex-wrap: wrap;
+    /*flex-wrap: wrap; */
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
     gap: 60px 30px;
 }
 .sec03__link {
