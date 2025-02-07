@@ -487,7 +487,7 @@ img {
     grid-template-columns: repeat(3, 1fr);
     gap: 60px 30px;
 }
-.sec03__layout li {
+.sec03__item {
     max-width: 380px;
 }
 .sec03__link {
@@ -776,10 +776,10 @@ footer {
     .sec03__layout {
         width: 100%;  
     }
-    .sec03__link {
+    /* .sec03__link {
         max-width: 380px;  
         width: 40vw;  
-    }
+    } */
 
     /*SEC05*/
     .preview-box {
@@ -886,8 +886,15 @@ footer {
     }
 
     /*SEC03*/
+    .sec03__layout {
+        grid-template-columns: repeat(1, 1fr);
+    }
     .sec03__layout li, .sec03__link  {
-        width: 100%;  
+        width: 90%;  
+        margin: 0 auto;
+    }
+    .project__details {
+        padding-top: 20px;
     }
 
     /*SEC06*/
