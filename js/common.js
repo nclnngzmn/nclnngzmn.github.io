@@ -25,6 +25,53 @@ const menuToggle = document.getElementById('menuToggle');
     });
 });
 
+//details
+document.addEventListener("DOMContentLoaded", function() {
+    // Experience Calculation
+    const startYear = 2023; //year work started
+    const startMonth = 11; //november
+    const previousExperienceMonths = 3; //3 months before work
+
+    const startDate = new Date(startYear, startMonth - 1);
+    const currentDate = new Date();
+
+    const diffInMilliseconds = currentDate - startDate;
+    const diffInYears = diffInMilliseconds / (1000 * 60 * 60 * 24 * 365.25);
+    const previousExperienceYears = previousExperienceMonths / 12;
+    const totalExperience = diffInYears + previousExperienceYears;
+
+    document.getElementById("experience-years").textContent = 
+        (Math.floor(totalExperience * 10) / 10).toFixed(1) + "+";
+
+    //coffee
+    const collegeYears = 5;
+    const coffeeStartYear = currentDate.getFullYear() - collegeYears; 
+    const coffeeStartDate = new Date(coffeeStartYear, 0, 1); 
+
+    const coffeeDays = Math.floor((currentDate - coffeeStartDate) / (1000 * 60 * 60 * 24));
+    const coffeeCount = coffeeDays; 
+
+    document.getElementById("coffee-count").textContent = formatNumber(coffeeCount);
+
+    //code lines
+    const weeksSinceStart = Math.floor((currentDate - coffeeStartDate) / (1000 * 60 * 60 * 24 * 7));
+    const linesOfCode = weeksSinceStart * 5000; 
+
+    document.getElementById("code-lines").textContent = formatNumber(linesOfCode);
+
+    //for shorthand
+    function formatNumber(num) {
+        if (num >= 1_000_000) {
+            return (num / 1_000_000).toFixed(1).replace(/\.0$/, '') + "M"; 
+        } else if (num >= 1_000) {
+            return (num / 1_000).toFixed(1).replace(/\.0$/, '') + "k"; 
+        } else {
+            return num; 
+        }
+    }
+
+});
+
 //for see more button
 $(document).ready(function(){
     $(".btn-toggle").click(function(){
