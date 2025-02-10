@@ -55,7 +55,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
     //code lines
     const weeksSinceStart = Math.floor((currentDate - coffeeStartDate) / (1000 * 60 * 60 * 24 * 7));
-    const linesOfCode = weeksSinceStart * 5000; 
+    const linesOfCode = weeksSinceStart * 1000; 
 
     document.getElementById("code-lines").textContent = formatNumber(linesOfCode);
 
