@@ -397,7 +397,7 @@ img {
 .item-title {
     padding: 10px 0;
 }
-.roles-responsibilities {
+.roles-responsibilities, .awards-list {
     padding-left: 40px;
     list-style-type: circle;
 }
