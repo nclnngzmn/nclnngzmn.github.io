@@ -134,25 +134,28 @@ img {
 
 /* FONTS */
 .f-12 {
-    font-size: clamp(8px, 0.411rem + 0.339vw, 12px);
+    font-size: clamp(8px, 0.75vw, 12px);
+}
+.f-14 {
+    font-size: clamp(12px, 0.875vw, 14px);
 }
 .f-16, .f-16m {
-    font-size: clamp(12px, 0.661rem + 0.339vw, 16px);
+    font-size: clamp(14px, 1vw, 16px);
 }
 .f-18, .f-18m {
-    font-size: clamp(16px, 0.786rem + 0.339vw, 18px);
+    font-size: clamp(16px, 1.125vw, 18px);
 }
 .f-20, .f-20m {
-    font-size: clamp(16px, 0.911rem + 0.339vw, 20px);
+    font-size: clamp(16px, 1.375vw, 20px);
 }
 .f-24, .f-24b {
-    font-size: clamp(18px, 0.9915rem + 0.5085vw, 24px);
+    font-size: clamp(18px, 1.75vw, 24px);
 }
 .f-28, .f-28b {
-    font-size: clamp(20px, 1.072rem + 0.678vw, 28px);
+    font-size: clamp(20px, 2vw, 28px);
 }
 .f-64b {
-    font-size: clamp(44px, 2.3051rem + 1.6949vw, 64px);
+    font-size: clamp(44px, 4vw, 64px);
 }
 
 .f-12, .f-16, .f-20, .f-24, .f-28 {
@@ -820,7 +823,7 @@ footer {
 }
 
 /*TABLET*/
-@media screen and (max-width: 769px) {
+@media screen and (max-width: 790px) {
 
     /*SEC05*/
     .certificate {
@@ -836,7 +839,7 @@ footer {
 }
 
 /*MOBILE*/
-@media screen and (max-width: 430px) {
+@media screen and (max-width: 500px) {
 
     /*MV*/
     .greeting {
@@ -858,15 +861,22 @@ footer {
     }
 
     /*SEC01*/
+    .sec01__content, .sec03__content, .sec05__content {
+        padding: 70px 0;
+    }
     .sec01__content h1 {
         text-align: center;  
     }
     .sec01__layout {
+        padding-top: 40px;
         flex-wrap: wrap;  
         justify-content: center;  
     }
     .profile-img {
         width: 80%;  
+    }
+    .sec01__desc {
+        padding-bottom: 40px;
     }
     .sec01__details {
         width: 90%;  
@@ -874,6 +884,9 @@ footer {
     }
 
     /*SEC02*/
+    .sec02__layout {
+        padding-top: 40px;
+    }
     .sec02__layout-item-row {
         width: 90%; 
         padding-left: 20px; 
@@ -887,9 +900,11 @@ footer {
 
     /*SEC03*/
     .sec03__layout {
+        padding: 40px 0;
         grid-template-columns: repeat(1, 1fr);
+        gap: 30px;
     }
-    .sec03__layout li, .sec03__link  {
+    .sec03__item {
         width: 90%;  
         margin: 0 auto;
     }
@@ -897,7 +912,16 @@ footer {
         padding-top: 20px;
     }
 
+    /*SEC04*/
+    .sec04__layout, .sec05__gallery {
+        padding-top: 40px;
+    }
+
     /*SEC06*/
+    .sec06__layout {
+        padding: 40px 0 70px 0;
+        gap: 40px;
+    }
     .sec06__item {
         flex-direction: column;  
     }
@@ -908,6 +932,10 @@ footer {
     }
     
     /*FOOTER*/
+    .footer__layout {
+        padding-top: 40px;
+        gap: 25px;
+    }
     .footer__item {
         margin: 0;  
         width: 100%;  
