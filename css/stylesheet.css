@@ -396,6 +396,7 @@ img {
 }
 .item-hidden {
     display: none;
+    padding-top: 20px;
 }
 .item-title {
     padding: 10px 0;
