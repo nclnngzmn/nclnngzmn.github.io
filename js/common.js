@@ -121,23 +121,10 @@ document.addEventListener("DOMContentLoaded", function () {
             if (currentPage > 1) {
                 currentPage--;
                 displayData(currentPage);
-                updateActiveLink();
+                updatePagination();
             }
         });
         pagination.appendChild(prevButton);
-
-        for (let i = 1; i <= totalPages; i++) {
-            const button = document.createElement("a");
-            button.href = "#sec03__layout";
-            button.textContent = i;
-            button.classList.add("page-link");
-            button.addEventListener("click", function () {
-                currentPage = i;
-                displayData(currentPage);
-                updateActiveLink();
-            });
-            pagination.appendChild(button);
-        }
 
         const nextButton = document.createElement("a");
         nextButton.href = "#sec03__layout";
@@ -147,29 +134,74 @@ document.addEventListener("DOMContentLoaded", function () {
             if (currentPage < totalPages) {
                 currentPage++;
                 displayData(currentPage);
-                updateActiveLink();
+                updatePagination();
             }
         });
         pagination.appendChild(nextButton);
 
-        function updateActiveLink() {
-            const links = pagination.querySelectorAll('.page-link');
-            links.forEach(link => link.classList.remove('active'));
-            const activeLink = Array.from(links).find(link => link.textContent == currentPage);
-            if (activeLink) {
-                activeLink.classList.add('active');
+        function updatePagination() {
+            const oldPages = pagination.querySelectorAll(".page-link:not(:first-child):not(:last-child)");
+            oldPages.forEach(btn => btn.remove());
+
+            if (currentPage > 2) {
+                const firstPage = createPageButton(1);
+                pagination.insertBefore(firstPage, nextButton);
             }
 
-            prevButton.style.display = (currentPage === 1) ? "none" : "inline-block";
-            nextButton.style.display = (currentPage === totalPages) ? "none" : "inline-block";
+            if (currentPage > 3) {
+                const dots = document.createElement("span");
+                dots.textContent = "...";
+                dots.classList.add("page-link");
+                dots.style.cursor = "default";
+                pagination.insertBefore(dots, nextButton);
+            }
+
+            const start = Math.max(1, currentPage - 1);
+            const end = Math.min(totalPages, currentPage + 1);
+
+            for (let i = start; i <= end; i++) {
+                const btn = createPageButton(i);
+                pagination.insertBefore(btn, nextButton);
+            }
+
+            if (currentPage < totalPages - 2) {
+                const dots = document.createElement("span");
+                dots.textContent = "...";
+                dots.classList.add("page-link");
+                dots.style.cursor = "default";
+                pagination.insertBefore(dots, nextButton);
+            }
+
+            if (currentPage < totalPages - 1) {
+                const lastPage = createPageButton(totalPages);
+                pagination.insertBefore(lastPage, nextButton);
+            }
+
+            prevButton.style.display = currentPage === 1 ? "none" : "inline-block";
+            nextButton.style.display = currentPage === totalPages ? "none" : "inline-block";
         }
 
-        updateActiveLink(); 
+        function createPageButton(page) {
+            const button = document.createElement("a");
+            button.href = "#sec03__layout";
+            button.textContent = page;
+            button.classList.add("page-link");
+            if (page === currentPage) button.classList.add("active");
+            button.addEventListener("click", function () {
+                currentPage = page;
+                displayData(currentPage);
+                updatePagination();
+            });
+            return button;
+        }
+
+        updatePagination(); 
     }
 
     createPaginationButtons();
     displayData(currentPage);
 });
+
 
 //for filtering certificates categories
 document.addEventListener("DOMContentLoaded", function () {
