@@ -114,7 +114,7 @@ document.addEventListener("DOMContentLoaded", function () {
         const totalPages = Math.ceil(data.length / itemsPerPage);
 
         const prevButton = document.createElement("a");
-        prevButton.href = "#sec03__layout";
+        prevButton.href = "javascript:void(0)";
         prevButton.innerHTML = '<i class="fa-solid fa-arrow-left"></i>';
         prevButton.classList.add("page-link");
         prevButton.addEventListener("click", function () {
@@ -127,7 +127,7 @@ document.addEventListener("DOMContentLoaded", function () {
         pagination.appendChild(prevButton);
 
         const nextButton = document.createElement("a");
-        nextButton.href = "#sec03__layout";
+        nextButton.href = "javascript:void(0)";
         nextButton.innerHTML = '<i class="fa-solid fa-arrow-right"></i>';
         nextButton.classList.add("page-link");
         nextButton.addEventListener("click", function () {
@@ -183,7 +183,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
         function createPageButton(page) {
             const button = document.createElement("a");
-            button.href = "#sec03__layout";
+            button.href = "javascript:void(0)";
             button.textContent = page;
             button.classList.add("page-link");
             if (page === currentPage) button.classList.add("active");
@@ -195,7 +195,7 @@ document.addEventListener("DOMContentLoaded", function () {
             return button;
         }
 
-        updatePagination(); 
+        updatePagination();
     }
 
     createPaginationButtons();
