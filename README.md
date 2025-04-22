@@ -1,4 +1,4 @@
-# 🌐 Seraphine's Web Developer Portfolio
+# 👩🏻‍💻 Nicole's Web Developer Portfolio
 
 Welcome to my personal portfolio website!  
 Built with **HTML5**, **CSS3**, and **vanilla JavaScript**, this responsive site showcases a collection of projects I've developed as a web developer.
