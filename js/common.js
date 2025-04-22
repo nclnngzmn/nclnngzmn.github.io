@@ -1,6 +1,9 @@
 //for scroll effect
-AOS.init({
-    offset: 0, 
+document.addEventListener('DOMContentLoaded', function () {
+    AOS.init({
+        duration: 1000,
+    });
+    setTimeout(() => AOS.refresh(), 500);
 });
 // document.addEventListener("DOMContentLoaded", function () {
 //     const scrollElements = document.querySelectorAll('.scroll');
