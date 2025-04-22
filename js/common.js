@@ -1,5 +1,7 @@
 //for scroll effect
-AOS.init();
+AOS.init({
+    offset: 0, 
+});
 // document.addEventListener("DOMContentLoaded", function () {
 //     const scrollElements = document.querySelectorAll('.scroll');
 
