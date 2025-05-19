@@ -755,6 +755,7 @@ footer {
 }
 .contact__info p {
     text-wrap: wrap;
+    overflow-wrap: anywhere;
 }
 
 /* --------------------------------------------------- RESPONSIVE PROPERTIES --------------------------------------------------- */
