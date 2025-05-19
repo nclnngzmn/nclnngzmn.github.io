@@ -753,6 +753,9 @@ footer {
 .footer__link:hover {
     background-color: rgba(50, 32, 34, 0.5);
 }
+.contact__info p {
+    text-wrap: wrap;
+}
 
 /* --------------------------------------------------- RESPONSIVE PROPERTIES --------------------------------------------------- */
 
