@@ -620,48 +620,54 @@ div#pagination {
     transform: translate(-50%, -50%);
     width: 100%; 
     max-width: 1200px;
+    max-height: 90vh; /* changed from 800px */
+    overflow: auto;   /* changed from hidden */
     background: #5C373C;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.4);
     border-radius: 20px;
     z-index: 100;
-    padding: 0 40px; 
-    box-sizing: border-box; 
+    padding: 40px;  /* more consistent padding */
+    box-sizing: border-box;
+}
 
-    max-height: 800px;  /* Set a max-height for the container */
-    overflow-y: auto;   /* Enable vertical scrolling */
-    padding-right: 10px; /* Add right padding to prevent text from touching the scrollbar */
-
-} 
-.preview-overlay {
+/* .preview-overlay {
     display: none;
     position: fixed;
     top: 0;
     left: 0;
     width: 100vw;
     height: 100vh;
+    pointer-events: auto;
     z-index: 99;
-}
+} */
 .preview-layout {
     display: flex;
-    /* padding: 100px 50px; */
-    padding: 10vh 5vw; 
+    gap: 20px;
+    align-items: center;
 }
 .preview-image {
     max-width: 600px;
-    width: auto;
+    width: 100%;
     height: auto;
 }
 .preview-description {
-    width: 500px;
-    text-align: left;
-    padding-left: 40px;
+    max-height: none;   /* remove height limit here */
+    overflow-y: auto;
+    /* padding-top: 20vh; */
+}
+.preview-box::-webkit-scrollbar {
+    width: 8px;
+}
+.preview-box::-webkit-scrollbar-thumb {
+    background-color: rgba(255, 255, 255, 0.3);
+    border-radius: 4px;
 }
 .description-container {
     display: none; 
     visibility: hidden;
 }
 .close-preview {
-    position: absolute;
+    position: fixed;
     top: 30px;
     right: 40px;
     font-size: 30px;
@@ -674,6 +680,7 @@ div#pagination {
     border-radius: 50%;
     background: rgba(248, 240, 242, 0.7);
     color: rgba(92, 55, 60, 1);
+    z-index: 101;
 }
 
 /*SEC06*/
@@ -786,7 +793,13 @@ footer {
     } */
 
     /*SEC05*/
-    .preview-box {
+    .preview-layout {
+        width: 90%;
+        margin: 0 auto;
+        flex-direction: column;
+        padding: 20px 0;
+    }
+    /* .preview-box {
         width: 90%; 
         padding: 0; 
         height: 90vh;  
@@ -805,7 +818,7 @@ footer {
         width: 100%;  
         padding-left: 0; 
         padding-top: 40px; 
-    }
+    } */
 
     /*SEC06*/
     .sec06__item {
@@ -916,6 +929,11 @@ footer {
     /*SEC04*/
     .sec04__layout, .sec05__gallery {
         padding-top: 40px;
+    }
+
+    /* SEC05 */
+    .preview-box {
+        padding: 1vw;
     }
 
     /*SEC06*/

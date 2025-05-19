@@ -1,116 +1,69 @@
-//for scroll effect
 document.addEventListener('DOMContentLoaded', function () {
-    AOS.init({
-        duration: 1000,
-    });
+    // aos scroll animation
+    AOS.init({ duration: 1000 });
     setTimeout(() => AOS.refresh(), 500);
-});
-// document.addEventListener("DOMContentLoaded", function () {
-//     const scrollElements = document.querySelectorAll('.scroll');
 
-//     const observer = new IntersectionObserver((entries, observer) => {
-//       entries.forEach(entry => {
-//         if (entry.isIntersecting) {
-//           entry.target.classList.add('active');
-//         } else {
-//           entry.target.classList.remove('active');
-//         }
-//       });
-//     }, { threshold: 0.1 }); 
-  
-//     scrollElements.forEach(element => observer.observe(element));
-// });
+    // closing nav on click
+    const navLinks = document.querySelectorAll('.nav a');
+    const menuToggle = document.getElementById('menuToggle');
+    navLinks.forEach(link => link.addEventListener('click', () => (menuToggle.checked = false)));
 
-//closing nav
-const navLinks = document.querySelectorAll('.nav a');
-const menuToggle = document.getElementById('menuToggle');
-
- navLinks.forEach(link => {
-    link.addEventListener('click', () => {
-        menuToggle.checked = false;
-    });
-});
-
-//details
-document.addEventListener("DOMContentLoaded", function() {
-    // Experience Calculation
-    const startYear = 2023; //year work started
-    const startMonth = 11; //november
-    const previousExperienceMonths = 3; //3 months before work
-
-    const startDate = new Date(startYear, startMonth - 1);
+    // details
+    const startDate = new Date(2023, 10); // november 2023 (month is 0-based)
     const currentDate = new Date();
-
-    const diffInMilliseconds = currentDate - startDate;
-    const diffInYears = diffInMilliseconds / (1000 * 60 * 60 * 24 * 365.25);
+    const previousExperienceMonths = 3;
     const previousExperienceYears = previousExperienceMonths / 12;
+
+    const diffInYears = (currentDate - startDate) / (1000 * 60 * 60 * 24 * 365.25);
     const totalExperience = diffInYears + previousExperienceYears;
 
-    document.getElementById("experience-years").textContent = 
-        (Math.floor(totalExperience * 10) / 10).toFixed(1) + "+";
+    document.getElementById("experience-years").textContent = (Math.floor(totalExperience * 10) / 10).toFixed(1) + "+";
+        // coffee counter
+        const collegeYears = 5;
+        const coffeeStartDate = new Date(currentDate.getFullYear() - collegeYears, 0, 1);
+        const coffeeDays = Math.floor((currentDate - coffeeStartDate) / (1000 * 60 * 60 * 24));
 
-    //coffee
-    const collegeYears = 5;
-    const coffeeStartYear = currentDate.getFullYear() - collegeYears; 
-    const coffeeStartDate = new Date(coffeeStartYear, 0, 1); 
-
-    const coffeeDays = Math.floor((currentDate - coffeeStartDate) / (1000 * 60 * 60 * 24));
-    const coffeeCount = coffeeDays; 
-
-    document.getElementById("coffee-count").textContent = formatNumber(coffeeCount);
-
-    //code lines
-    const weeksSinceStart = Math.floor((currentDate - coffeeStartDate) / (1000 * 60 * 60 * 24 * 7));
-    const linesOfCode = weeksSinceStart * 5000; 
+    document.getElementById("coffee-count").textContent = formatNumber(coffeeDays);
+        // code lines counter
+        const weeksSinceStart = Math.floor((currentDate - coffeeStartDate) / (1000 * 60 * 60 * 24 * 7));
+        const linesOfCode = weeksSinceStart * 5000;
 
     document.getElementById("code-lines").textContent = formatNumber(linesOfCode);
-
-    //for shorthand
-    function formatNumber(num) {
-        if (num >= 1_000_000) {
-            return (num / 1_000_000).toFixed(1).replace(/\.0$/, '') + "M"; 
-        } else if (num >= 1_000) {
-            return (num / 1_000).toFixed(1).replace(/\.0$/, '') + "k"; 
-        } else {
-            return num; 
+        // formatting large number
+        function formatNumber(num) {
+            if (num >= 1_000_000) return (num / 1_000_000).toFixed(1).replace(/\.0$/, '') + "M";
+            if (num >= 1_000) return (num / 1_000).toFixed(1).replace(/\.0$/, '') + "k";
+            return num;
         }
-    }
 
-});
-
-//for see more button
-$(document).ready(function(){
-    $(".btn-toggle").click(function(){
-        $(this).closest('.sec02__layout-item').find(".item-hidden").slideToggle();
-        $(this).toggleClass('less');
-        if ($(this).hasClass('less')) {
-            $(this).html('See Less <i class="fas fa-chevron-up"></i>');
-        } else {
-            $(this).html('See More <i class="fas fa-chevron-down"></i>');
-        }
+    // see more toggle
+    $(function () {
+        $(".btn-toggle").click(function () {
+            const $this = $(this);
+            $this.closest('.sec02__layout-item').find(".item-hidden").slideToggle();
+            $this.toggleClass('less');
+            $this.html($this.hasClass('less') 
+                ? 'See Less <i class="fas fa-chevron-up"></i>' 
+                : 'See More <i class="fas fa-chevron-down"></i>'
+            );
+        });
     });
-});
 
-//for pagination
-document.addEventListener("DOMContentLoaded", function () {
+    // pagination
     const dataList = document.querySelector(".sec03__layout");
     const pagination = document.getElementById("pagination");
-
     const itemsPerPage = 6;
     const dataItems = document.querySelectorAll(".sec03__item");
     const data = Array.from(dataItems).map(item => item.outerHTML);
-
     let currentPage = 1;
 
     function displayData(page) {
         dataList.innerHTML = "";
         const start = (page - 1) * itemsPerPage;
-        const end = start + itemsPerPage;
-        const pageData = data.slice(start, end);
-
-        pageData.forEach(item => {
+        const pageData = data.slice(start, start + itemsPerPage);
+        pageData.forEach(itemHTML => {
             const li = document.createElement("li");
-            li.innerHTML = item;
+            li.innerHTML = itemHTML;
             dataList.appendChild(li);
         });
     }
@@ -118,86 +71,69 @@ document.addEventListener("DOMContentLoaded", function () {
     function createPaginationButtons() {
         const totalPages = Math.ceil(data.length / itemsPerPage);
 
-        const prevButton = document.createElement("a");
-        prevButton.href = "javascript:void(0)";
-        prevButton.innerHTML = '<i class="fa-solid fa-arrow-left"></i>';
-        prevButton.classList.add("page-link");
-        prevButton.addEventListener("click", function () {
+        const prevButton = createNavButton('<i class="fa-solid fa-arrow-left"></i>', () => {
             if (currentPage > 1) {
                 currentPage--;
                 displayData(currentPage);
                 updatePagination();
             }
         });
-        pagination.appendChild(prevButton);
 
-        const nextButton = document.createElement("a");
-        nextButton.href = "javascript:void(0)";
-        nextButton.innerHTML = '<i class="fa-solid fa-arrow-right"></i>';
-        nextButton.classList.add("page-link");
-        nextButton.addEventListener("click", function () {
+        const nextButton = createNavButton('<i class="fa-solid fa-arrow-right"></i>', () => {
             if (currentPage < totalPages) {
                 currentPage++;
                 displayData(currentPage);
                 updatePagination();
             }
         });
+
+        pagination.appendChild(prevButton);
         pagination.appendChild(nextButton);
 
         function updatePagination() {
-            const oldPages = pagination.querySelectorAll(".page-link:not(:first-child):not(:last-child)");
-            oldPages.forEach(btn => btn.remove());
+            pagination.querySelectorAll(".page-link:not(:first-child):not(:last-child)").forEach(el => el.remove());
 
-            if (currentPage > 2) {
-                const firstPage = createPageButton(1);
-                pagination.insertBefore(firstPage, nextButton);
-            }
-
-            if (currentPage > 3) {
-                const dots = document.createElement("span");
-                dots.textContent = "...";
-                dots.classList.add("page-link");
-                dots.style.cursor = "default";
-                pagination.insertBefore(dots, nextButton);
-            }
+            if (currentPage > 2) pagination.insertBefore(createPageButton(1), nextButton);
+            if (currentPage > 3) pagination.insertBefore(createDots(), nextButton);
 
             const start = Math.max(1, currentPage - 1);
             const end = Math.min(totalPages, currentPage + 1);
-
             for (let i = start; i <= end; i++) {
-                const btn = createPageButton(i);
-                pagination.insertBefore(btn, nextButton);
+                pagination.insertBefore(createPageButton(i), nextButton);
             }
 
-            if (currentPage < totalPages - 2) {
-                const dots = document.createElement("span");
-                dots.textContent = "...";
-                dots.classList.add("page-link");
-                dots.style.cursor = "default";
-                pagination.insertBefore(dots, nextButton);
-            }
-
-            if (currentPage < totalPages - 1) {
-                const lastPage = createPageButton(totalPages);
-                pagination.insertBefore(lastPage, nextButton);
-            }
+            if (currentPage < totalPages - 2) pagination.insertBefore(createDots(), nextButton);
+            if (currentPage < totalPages - 1) pagination.insertBefore(createPageButton(totalPages), nextButton);
 
             prevButton.style.display = currentPage === 1 ? "none" : "inline-block";
             nextButton.style.display = currentPage === totalPages ? "none" : "inline-block";
         }
 
         function createPageButton(page) {
-            const button = document.createElement("a");
-            button.href = "javascript:void(0)";
-            button.textContent = page;
-            button.classList.add("page-link");
-            if (page === currentPage) button.classList.add("active");
-            button.addEventListener("click", function () {
+            const btn = createNavButton(page, () => {
                 currentPage = page;
                 displayData(currentPage);
                 updatePagination();
             });
-            return button;
+            if (page === currentPage) btn.classList.add("active");
+            return btn;
+        }
+
+        function createNavButton(innerHTML, onClick) {
+            const a = document.createElement("a");
+            a.href = "javascript:void(0)";
+            a.innerHTML = innerHTML;
+            a.className = "page-link";
+            a.addEventListener("click", onClick);
+            return a;
+        }
+
+        function createDots() {
+            const span = document.createElement("span");
+            span.textContent = "...";
+            span.className = "page-link";
+            span.style.cursor = "default";
+            return span;
         }
 
         updatePagination();
@@ -205,56 +141,38 @@ document.addEventListener("DOMContentLoaded", function () {
 
     createPaginationButtons();
     displayData(currentPage);
-});
 
-
-//for filtering certificates categories
-document.addEventListener("DOMContentLoaded", function () {
-    const certificates = document.querySelector(".certificates-category");
-    const images = document.querySelectorAll(".certificate .image-container");
-    const descriptions = document.querySelectorAll(".certificate .description-container");
+    // certificates
+    const certificates = document.querySelectorAll(".certificate");
     const previewBox = document.querySelector(".preview-box");
     const previewImage = document.querySelector(".preview-image");
     const previewDescription = document.querySelector(".preview-description");
     const closeButton = document.querySelector(".close-preview");
+    const overlay = document.querySelector(".preview-overlay");
 
-    const overlay = document.createElement("div");
-    overlay.classList.add("preview-overlay");
-    document.body.appendChild(overlay);
+    function openModal(imgSrc, description) {
+        previewImage.src = imgSrc;
+        previewDescription.textContent = description;
+        previewBox.style.display = "block";
+        overlay.style.display = "block";
+    }
 
     function closeModal() {
         previewBox.style.display = "none";
         overlay.style.display = "none";
+        document.body.style.overflow = "auto";
     }
 
-    certificates.addEventListener("click", (event) => {
-        if (event.target.classList.contains("item")) {
-            document.querySelectorAll(".item").forEach((item) => {
-                item.classList.remove("active");
-            });
-
-            event.target.classList.add("active");
-            const filter = event.target.getAttribute("data-name");
-
-            images.forEach((image, index) => {
-                const imageFilter = image.parentElement.getAttribute("data-name");
-                image.parentElement.style.display = (filter === "all" || filter === imageFilter) ? "block" : "none";
-            });
-        }
-    });
-
-    images.forEach((image, index) => {
-        image.addEventListener("click", () => {
-            const imgSrc = image.querySelector("img").src;
-            const description = descriptions[index].querySelector(".description").textContent;
-            previewImage.src = imgSrc;
-            previewDescription.textContent = description;
-            previewBox.style.display = "block";
-            overlay.style.display = "block";
+    certificates.forEach(cert => {
+        cert.addEventListener("click", () => {
+            const imgSrc = cert.querySelector("img").src;
+            const desc = cert.querySelector(".description").textContent;
+            openModal(imgSrc, desc);
         });
     });
 
     closeButton.addEventListener("click", closeModal);
-    overlay.addEventListener("click", closeModal);
+    overlay.addEventListener("click", e => {
+        if (!previewBox.contains(e.target)) closeModal();
+    });
 });
-
