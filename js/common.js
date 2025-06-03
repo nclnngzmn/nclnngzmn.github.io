@@ -149,6 +149,7 @@ document.addEventListener('DOMContentLoaded', function () {
     const previewDescription = document.querySelector(".preview-description");
     const closeButton = document.querySelector(".close-preview");
     const overlay = document.querySelector(".preview-overlay");
+    const filterItems = document.querySelectorAll(".certificates-category .item");
 
     function openModal(imgSrc, description) {
         previewImage.src = imgSrc;
@@ -174,5 +175,25 @@ document.addEventListener('DOMContentLoaded', function () {
     closeButton.addEventListener("click", closeModal);
     overlay.addEventListener("click", e => {
         if (!previewBox.contains(e.target)) closeModal();
+    });
+
+    filterItems.forEach(item => {
+        item.addEventListener("click", function () {
+        filterItems.forEach(btn => btn.classList.remove("active"));
+
+        this.classList.add("active");
+
+        const selectedCategory = this.getAttribute("data-name");
+
+        certificates.forEach(cert => {
+            const certCategory = cert.getAttribute("data-name");
+
+            if (selectedCategory === "all" || selectedCategory === certCategory) {
+            cert.style.display = "block";
+            } else {
+            cert.style.display = "none";
+            }
+        });
+        });
     });
 });
