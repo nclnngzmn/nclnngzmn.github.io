@@ -13,28 +13,52 @@ document.addEventListener('DOMContentLoaded', function () {
     const currentDate = new Date();
     const previousExperienceMonths = 3;
     const previousExperienceYears = previousExperienceMonths / 12;
-
     const diffInYears = (currentDate - startDate) / (1000 * 60 * 60 * 24 * 365.25);
     const totalExperience = diffInYears + previousExperienceYears;
-
     document.getElementById("experience-years").textContent = (Math.floor(totalExperience * 10) / 10).toFixed(1) + "+";
-        // coffee counter
-        const collegeYears = 5;
-        const coffeeStartDate = new Date(currentDate.getFullYear() - collegeYears, 0, 1);
-        const coffeeDays = Math.floor((currentDate - coffeeStartDate) / (1000 * 60 * 60 * 24));
 
+    // coffee counter
+    const collegeYears = 5;
+    const coffeeStartDate = new Date(currentDate.getFullYear() - collegeYears, 0, 1);
+    const coffeeDays = Math.floor((currentDate - coffeeStartDate) / (1000 * 60 * 60 * 24));
     document.getElementById("coffee-count").textContent = formatNumber(coffeeDays);
-        // code lines counter
-        const weeksSinceStart = Math.floor((currentDate - coffeeStartDate) / (1000 * 60 * 60 * 24 * 7));
-        const linesOfCode = weeksSinceStart * 5000;
 
+    // code lines counter
+    const weeksSinceStart = Math.floor((currentDate - coffeeStartDate) / (1000 * 60 * 60 * 24 * 7));
+    const linesOfCode = weeksSinceStart * 5000;
     document.getElementById("code-lines").textContent = formatNumber(linesOfCode);
-        // formatting large number
-        function formatNumber(num) {
-            if (num >= 1_000_000) return (num / 1_000_000).toFixed(1).replace(/\.0$/, '') + "M";
-            if (num >= 1_000) return (num / 1_000).toFixed(1).replace(/\.0$/, '') + "k";
-            return num;
+
+    // formatting large number
+    function formatNumber(num) {
+        if (num >= 1_000_000) return (num / 1_000_000).toFixed(1).replace(/\.0$/, '') + "M";
+        if (num >= 1_000) return (num / 1_000).toFixed(1).replace(/\.0$/, '') + "k";
+        return num;
+    }
+
+    // project counter
+    const projectItems = document.querySelectorAll(".sec03__item");
+    const websiteCounter = document.getElementById("no-websites");
+    const landingCounter = document.getElementById("no-landing");
+
+    let websiteCount = 0;
+    let landingCount = 0;
+
+    projectItems.forEach(item => {
+        const type = item.getAttribute("data-type");
+        if (type === "website") {
+            websiteCount++;
+        } else if (type === "landing") {
+            landingCount++;
         }
+    });
+
+    if (websiteCounter) {
+        websiteCounter.textContent = websiteCount + "+";
+    }
+
+    if (landingCounter) {
+        landingCounter.textContent = landingCount + "+";
+    }
 
     // see more toggle
     $(function () {
@@ -179,21 +203,15 @@ document.addEventListener('DOMContentLoaded', function () {
 
     filterItems.forEach(item => {
         item.addEventListener("click", function () {
-        filterItems.forEach(btn => btn.classList.remove("active"));
+            filterItems.forEach(btn => btn.classList.remove("active"));
+            this.classList.add("active");
 
-        this.classList.add("active");
+            const selectedCategory = this.getAttribute("data-name");
 
-        const selectedCategory = this.getAttribute("data-name");
-
-        certificates.forEach(cert => {
-            const certCategory = cert.getAttribute("data-name");
-
-            if (selectedCategory === "all" || selectedCategory === certCategory) {
-            cert.style.display = "block";
-            } else {
-            cert.style.display = "none";
-            }
-        });
+            certificates.forEach(cert => {
+                const certCategory = cert.getAttribute("data-name");
+                cert.style.display = (selectedCategory === "all" || selectedCategory === certCategory) ? "block" : "none";
+            });
         });
     });
 });

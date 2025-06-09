@@ -484,6 +484,14 @@ img {
 .sec03__content {
     padding: 200px 0;
 }
+
+.sec03__head {
+    gap: 20px;
+}
+.sec03__head-cat {
+    flex-wrap: wrap;
+}
+
 .sec03__layout {
     padding: 100px 0;
     /*flex-wrap: wrap; */
