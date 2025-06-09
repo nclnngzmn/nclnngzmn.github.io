@@ -134,7 +134,7 @@ img {
 
 /* FONTS */
 .f-12 {
-    font-size: clamp(8px, 0.75vw, 12px);
+    font-size: clamp(12px, 0.75vw, 12px);
 }
 .f-14 {
     font-size: clamp(12px, 0.875vw, 14px);
@@ -527,7 +527,7 @@ img {
 .project__date {
     padding: 0 10px;
     background: rgba(197, 139, 148, 0.5);
-    margin-bottom: 20px;
+    margin-bottom: 10px;
     width: fit-content;
     border-radius: 30px;
 }
