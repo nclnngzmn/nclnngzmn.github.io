@@ -490,7 +490,9 @@ img {
 }
 .sec03__head-cat {
     flex-wrap: wrap;
+    gap: 30px;
 }
+
 
 .sec03__layout {
     padding: 100px 0;
@@ -898,6 +900,11 @@ footer {
         flex-wrap: wrap;  
         justify-content: center;  
     }
+    .sec01__img {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
     .profile-img {
         width: 80%;  
     }
@@ -933,6 +940,9 @@ footer {
     .sec03__item {
         width: 90%;  
         margin: 0 auto;
+    }
+    .sec03__head-cat {
+        gap: 15px;
     }
     .project__details {
         padding-top: 20px;
