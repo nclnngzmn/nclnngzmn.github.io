@@ -40,10 +40,12 @@ document.addEventListener('DOMContentLoaded', function () {
     const websiteCounter = document.getElementById("no-websites");
     const landingCounter = document.getElementById("no-landing");
     const personalCounter = document.getElementById("no-personal");
+    const designCounter = document.getElementById("no-design");
 
     let websiteCount = 0;
     let landingCount = 0;
     let personalCount = 0;
+    let designCount = 0;
 
     projectItems.forEach(item => {
         const type = item.getAttribute("data-type");
@@ -53,6 +55,8 @@ document.addEventListener('DOMContentLoaded', function () {
             landingCount++;
         } else if (type === "personal") {
             personalCount++;
+        } else if (type === "design") {
+            designCount++;
         }
     });
 
@@ -66,6 +70,9 @@ document.addEventListener('DOMContentLoaded', function () {
 
     if (personalCounter) {
         personalCounter.textContent = personalCount + "+";
+    }
+    if (designCounter) {
+        personalCounter.textContent = designCount + "+";
     }
 
     // see more toggle
