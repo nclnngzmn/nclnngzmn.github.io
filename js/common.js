@@ -72,7 +72,7 @@ document.addEventListener('DOMContentLoaded', function () {
         personalCounter.textContent = personalCount + "+";
     }
     if (designCounter) {
-        personalCounter.textContent = designCount + "+";
+        designCounter.textContent = designCount + "+";
     }
 
     // see more toggle
