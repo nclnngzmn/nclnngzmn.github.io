@@ -525,7 +525,7 @@ img {
         align-items: center;
     }
 
-    .more_details {
+    .more_details.active {
         max-height: max-content;
     }
 
