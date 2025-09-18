@@ -482,6 +482,9 @@ img {
     height: auto;
     cursor: pointer;
 }
+.projects-special .item .desc .info {
+    flex-wrap: wrap;
+}
 .projects-special .item .desc .features ul {
     padding-left: 40px !important;
 }
@@ -520,6 +523,10 @@ img {
 
     .hero .buttons {
         align-items: center;
+    }
+
+    .more_details {
+        max-height: max-content;
     }
 
     .stats_socials {
