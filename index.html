@@ -1,1060 +1,539 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ja">
     <head>
         <meta charset="UTF-8">
         <title>Ctrl + Nicole</title>
-        <link rel="icon" type="image/svg" size="18x18" href="assets/favicon.svg">
+        <link rel="icon" type="image/svg+xml" sizes="18x18" href="assets/favicon.svg">
         <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0">
-        <link rel="preconnect" href="https://fonts.gstatic.com">
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Montagu+Slab:opsz,wght@16..144,100..700&display=swap" rel="stylesheet">
-        <link href="https://fonts.googleapis.com/css2?family=Montagu+Slab:opsz,wght@16..144,100..700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
-        <link href="https://use.fontawesome.com/releases/v6.5.1/css/all.css" rel="stylesheet">
-        <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" rel="stylesheet">
-        <link href="css/stylesheet.css" media="screen, projection" rel="stylesheet">
-        <link href="js/common.js" media="screen, projection" rel="stylesheet">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css">
-        <link href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick-theme.min.css" rel="stylesheet" type="text/css">
-        <link href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.css" rel="stylesheet" type="text/css">   
+        <link href="https://fonts.googleapis.com/css2?family=Montagu+Slab:opsz,wght@16..144,100..700&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://use.typekit.net/zrr3zap.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-xxx...yyy" crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" integrity="sha512-bFmj5JgI7NMb3Pg1mY0ytKwFFS8ddQ0cG0ITkEq3VrF1nxzO2WRL94gJvRrZbhcM+g3V5VQv71BB4blvYUMw6g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
         <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">  
+        <link href="css/stylesheet.css" rel="stylesheet">
     </head>
     <body>
-        <div class="overflow">
-            <!--mv + nav-->
-            <section class="mv" id="home">
-                <div class="mv__content">
-                    <div class="menu-container section">
-                        <input type="checkbox" id="menuToggle">
-                        <label for="menuToggle" class="menu">
-                            <span class="hamburger"></span> 
-                        </label>
-                        <ul class="nav">
-                            <li><a href="#home" class="f-20">Home</a></li>
-                            <li><a href="#about-me" class="f-20">About Me</a></li>
-                            <li><a href="#work" class="f-20">Work Experiences</a></li>
-                            <li><a href="#projects" class="f-20">Projects</a></li>
-                            <li><a href="#skills" class="f-20">Skills</a></li>
-                            <li><a href="#certificates" class="f-20">Certificates</a></li>
-                            <li><a href="#education" class="f-20">Education</a></li>
-                            <li><a href="#contact" class="f-20">Contact</a></li>
+        <main>
+            <div class="wrapper df fd-col w-1400 g-30" data-aos="fade-up">
+                <!-- row1 -->
+                <div class="df row1 g-30">
+                    <!-- hero -->
+                    <section class="hero display">
+                        <ul class="content display fd-col g-30">
+                            <li class="head">
+                                <h1 class="f-36b mont ta-c">
+                                    A <span class="pink">web developer</span>
+                                    specializing in <span class="pink">front-end development</span>.
+                                </h1>
+                            </li>
+                            <li class="stats">
+                                <ul class="df g-20">
+                                    <li class="item display g-10">
+                                        <h4 class="f-20" id="experience-years"></h4>
+                                        <p class="f-16">Years of <br> Experience</p>
+                                    </li>
+                                    <li class="item display g-10">
+                                        <h4 class="f-20" id="coffee-count"></h4>
+                                        <p class="f-16">Cups of <br> Iced Coffee</p>
+                                    </li>
+                                    <li class="item display g-10">
+                                        <h4 class="f-20" id="code-lines"></h4>
+                                        <p class="f-16">Lines of code<br> Crafted</p>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="buttons df fd-col g-30">
+                                <a href="assets/NicoleAnne_Guzman_Resume.pdf" download="NicoleAnne_Guzman_Resume.pdf" target="_blank">
+                                    <div class="btn-resume f-20b display jc-c g-10">
+                                        <i class="fa-regular fa-file"></i>
+                                        <h4>Download Resume</h4>
+                                    </div>
+                                </a>
+                                <a href="mailto:guzmannicoleannerivera@gmail.com" target="_blank">
+                                    <div class="btn-mail f-20b display jc-c g-10">
+                                        <i class="fa-regular fa-envelope"></i>
+                                        <h4>Get in Touch</h4>
+                                    </div>
+                                </a>
+                            </li>
+                        </ul>
+                    </section>
+                    <!-- about -->
+                    <section class="about">
+                        <ul class="content df fd-col g-30">
+                            <li class="profile display g-20">
+                                <img src="assets/profile.jpg" alt="profile image" class="profile-img">
+                                <div class="info df fd-col g-10">
+                                    <h2 class="pink f-32b">Nicole Anne Guzman</h2>
+                                    <div class="display g-5">
+                                        <i class="fa-solid fa-location-dot"></i>
+                                        <p class="f-16">Metro Manila, Philippines</p>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="desc df fd-col g-20">
+                                <div class="title g-10 pink f-24b mont display">
+                                    <i class="fa-solid fa-mug-saucer"></i>
+                                    <h3>About Me</h3>
+                                </div>
+                                <p class="f-16">
+                                    I’m a tech enthusiast on a mission to blend creativity, problem-solving, and innovation. With a passion for UI design, web development, and data analytics, I thrive on turning challenges into sleek, user-friendly solutions. I’m always up for a new skill—curiosity is my compass, guiding me to explore and improve. 
+                                    <br><br>
+                                    My mantra? "If it’s not pretty, it’s a work in progress." I believe in keeping things neat, organized, and visually appealing because great design is all about the details.
+                                    <br><br>
+                                    Beyond the screen, you’ll find me with a cup of iced coffee, lost in a good book or the latest series and movies. These moments recharge my creativity and keep my problem-solving sharp. Here’s to creating beautiful, functional, and fun digital experiences! 🥂✨
+                                </p>
+                            </li>
+                        </ul>
+                    </section>
+                </div>
+
+                <!-- row2 -->
+                <div class="df row2 g-30">
+                    <!-- experience -->
+                    <section class="experience">
+                        <div class="content df fd-col g-30">
+                            <div class="title g-10 pink f-24b mont display">
+                                <i class="fa-solid fa-briefcase"></i>
+                                <h3>Experience</h3>
+                            </div>
+                            <ul class="timeline df fd-col g-30 relative">
+                                <li class="item df fd-col g-10 relative">
+                                    <h6 class="f-18b">Web Developer</h6>
+                                    <div class="info">
+                                        <span class="f-16sb">Rightcore Inc.</span> ∙ <span class="gray">Nov 2023 - present</span>
+                                        <p class="f-16">Building responsive websites and custom WordPress solutions tailored for Japanese clients</p>
+                                    </div>
+                                    <div class="btn-more f-16 display g-5">
+                                        <p>See More</p>
+                                        <i class="fa-solid fa-chevron-down"></i>
+                                    </div>
+                                    <ul class="more_details f-16">
+                                        <li>Developed responsive, user-friendly websites by translating Figma wireframes into code</li>
+                                        <li>Built dynamic WordPress themes with custom post types, SCF, and PHP templates</li>
+                                        <li>Upheld project quality by standardizing code structure and ensuring long-term</li>
+                                    </ul>
+                                </li>
+                                <li class="item df fd-col g-10 relative">
+                                    <h6 class="f-18b">Data Engineer (Software Developer) Intern</h6>
+                                    <div class="info">
+                                        <span class="f-16sb">RCBC - Data Science & Analytics Group</span> ∙ <span class="gray">Jun 2023 - Aug 2023</span>
+                                        <p class="f-16">Led front-end development of the data dictionary web app project for RCBC’s Data Science team</p>
+                                    </div>
+                                    <div class="btn-more f-16 display g-5">
+                                        <p>See More</p>
+                                        <i class="fa-solid fa-chevron-down"></i>
+                                    </div>
+                                    <ul class="more_details f-16">
+                                        <li>Directed front-end team, delivering core app modules presented to project stakeholders</li>
+                                        <li>Designed and implemented UI/UX workflows using Figma, Bootstrap, and Django (Jinja)</li>
+                                        <li>Optimized development process with Docker and GIt for seamless collaboration</li>
+                                    </ul>
+                                </li>
+                                <li class="item df fd-col g-10 relative">
+                                    <h6 class="f-18b">Software Developer Intern</h6>
+                                    <div class="info">
+                                        <span class="f-16sb">Melham Construction Corporation - IT Department</span> ∙ <span class="gray">Jul 2022 - Aug 2022</span>
+                                        <p class="f-16">Enhanced MCC’s Learning Management System by improving backend and UI functionaility</p>
+                                    </div>
+                                    <div class="btn-more f-16 display g-5">
+                                        <p>See More</p>
+                                        <i class="fa-solid fa-chevron-down"></i>
+                                    </div>
+                                    <ul class="more_details f-16">
+                                        <li>Implemented CRUD features and database operations to strengthen system readability </li>
+                                        <li>Improved user experience with Bootstrap redesigns and AJAX functionality</li>
+                                        <li>Refined announcement and discussion modules to enhance usability</li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                    </section>
+                    <!-- tech stack -->
+                    <section class="tech-stack">
+                        <ul class="content df fd-col g-30">
+                            <li class="head display jc-sb g-20">
+                                <div class="title g-10 pink f-24b mont display">
+                                    <i class="fa-solid fa-code"></i>
+                                    <h3>Tech Stack</h3>
+                                </div>
+                                <a href="tech-stack.html">
+                                    <div class="btn-view display g-5 f-16">
+                                        <p>View All</p>
+                                        <i class="fa-solid fa-chevron-right"></i>
+                                    </div>
+                                </a>
+                            </li>
+                            <li class="stack">
+                                <ul class="df fd-col g-20">
+                                    <!-- frontend -->
+                                    <li class="item df fd-col g-10">
+                                        <h6 class="f-18b">Frontend</h6>
+                                        <ul class="tech-list display g-10">
+                                            <li class="display g-10 f-16">
+                                                <i class="fa-brands fa-html5"></i>
+                                                <p>HTML</p>
+                                            </li>
+                                            <li class="display g-10 f-16">
+                                                <i class="fa-brands fa-css3-alt"></i>
+                                                <p>CSS</p>
+                                            </li>
+                                            <li class="display g-10 f-16">
+                                                <i class="fa-brands fa-js"></i>
+                                                <p>JavaScript</p>
+                                            </li>
+                                            <li class="display g-10 f-16">
+                                                <i class="fa-brands fa-bootstrap"></i>
+                                                <p>Bootstrap</p>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <!-- cms & platform -->
+                                    <li class="item df fd-col g-10">
+                                        <h6 class="f-18b">CMS & Platforms</h6>
+                                        <ul class="tech-list display g-10">
+                                            <li class="display g-10 f-16">
+                                                <i class="fa-brands fa-wordpress"></i>
+                                                <p>WordPress</p>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <!-- design & prototyping -->
+                                    <li class="item df fd-col g-10">
+                                        <h6 class="f-18b">Design & Prototyping</h6>
+                                        <ul class="tech-list display g-10">
+                                            <li class="display g-10 f-16">
+                                                <i class="fa-brands fa-figma"></i>
+                                                <p>Figma</p>
+                                            </li>
+                                            <li class="display g-10 f-16">
+                                                <img src="assets/icons/canva.png" alt="canva logo">
+                                                <p>Canva</p>
+                                            </li>
+                                            <li class="display g-10 f-16">
+                                                <img src="assets/icons/lucidchart.svg" alt="lucid chart logo">
+                                                <p>Lucidchart</p>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <!-- version control & collaboration -->
+                                    <li class="item df fd-col g-10">
+                                        <h6 class="f-18b">Version Control & Collaboration</h6>
+                                        <ul class="tech-list display g-10">
+                                            <li class="display g-10 f-16">
+                                                <i class="fa-brands fa-git-alt"></i>
+                                                <p>Git</p>
+                                            </li>
+                                            <li class="display g-10 f-16">
+                                                <i class="fa-brands fa-github"></i>
+                                                <p>GitHub</p>
+                                            </li>
+                                            <li class="display g-10 f-16">
+                                                <i class="fa-brands fa-gitlab"></i>
+                                                <p>GitLab</p>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <!-- backend & database -->
+                                    <li class="item df fd-col g-10">
+                                        <h6 class="f-18b">Backend & Database</h6>
+                                        <ul class="tech-list display g-10">
+                                            <li class="display g-10 f-16">
+                                                <i class="fa-brands fa-php"></i>
+                                                <p>PHP</p>
+                                            </li>
+                                            <li class="display g-10 f-16">
+                                                <i class="fa-solid fa-database"></i>
+                                                <p>MySQL</p>
+                                            </li>
+                                            <li class="display g-10 f-16">
+                                                <i class="fa-solid fa-database"></i>
+                                                <p>phpMyAdmin</p>
+                                            </li>
+                                            <li class="display g-10 f-16">
+                                                <img src="assets/icons/xampp.svg" alt="xampp logo">
+                                                <p>XAMPP</p>
+                                            </li>
+                                            <li class="display g-10 f-16">
+                                                <i class="fa-brands fa-docker"></i>
+                                                <p>Docker</p>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </section>
+                </div>
+
+                <!-- row3 : awards -->
+                <section class="awards">
+                    <div class="content df fd-col g-30">
+                        <div class="title g-10 pink f-24b mont display">
+                            <i class="fa-solid fa-trophy"></i>
+                            <h3>Award/s</h3>
+                        </div>
+                        <ul class="awards_list">
+                            <li>Recognized as MVP for Coders <span class="gray">(Rightcore Inc ∙ 2024)</span></li>
                         </ul>
                     </div>
-                    
-                    <ul class="mv__layout display jc-c fd-col ta-c section" data-aos="fade-up">
-                        <li class="greeting bg-m">
-                            <h6 class="f-24">It’s me, Hi! I’m Nicole Anne Guzman</h6>
-                        </li>
-                        <li class="intro">
-                            <h1 class="f-64b montagu">
-                                A <span class="pink">web developer</span> specializing in <span class="pink">front-end development</span>.
-                            </h1>
-                        </li>
-                        <li class="details df">
-                            <div class="detail__item display"><!--item01-->
-                                <div class="detail__item-head f-24 bg-m" id="experience-years"></div>
-                                <p class="detail__item-desc ta-s">
-                                    Years of <br>
-                                    experience
-                                </p>
-                            </div> 
-                            <div class="detail__item display"><!--item02-->
-                                <div class="detail__item-head f-24 bg-m" id="coffee-count"></div>
-                                <p class="detail__item-desc ta-s">
-                                    Cups of <br>
-                                    Iced Coffee
-                                </p>
-                            </div> 
-                            <div class="detail__item display"><!--item03-->
-                                <div class="detail__item-head f-24 bg-m" id="code-lines"></div>
-                                <p class="detail__item-desc ta-s">
-                                    Lines of code <br>
-                                    crafted
-                                </p>
-                            </div> 
-                        </li>
-                        <li class="mv__buttons display jc-sb">
-                            <a href="assets/NicoleAnne_Guzman_Resume.pdf" class="btn__layout" download="Nicole-Anne-R-Guzman-Resume.pdf" target="_blank">
-                                <div class="btn-resume display maroon jc-c">
-                                    <i class="fa-regular fa-file"></i>
-                                    <p class="f-28b">Resume</p>
-                                </div>
-                            </a>
-                            <a href="#contact" class="btn__layout">
-                                <div class="btn-contact display jc-c">
-                                    <i class="fa-regular fa-message"></i>
-                                    <p class="f-28b">Contact</p>
-                                </div>
-                            </a>
-                        </li>
-                    </ul>
-                </div>
-            </section>
-            
-            <!--page content-->
-            <section class="sec01 section">
-                <div class="sec01__content w-1200" data-aos="fade-up" id="about-me">
-                    <h1 class="f-64b montagu">About <span class="pink">Me</span></h1>
-                    <ul class="sec01__layout df jc-sb">
-                        <li class="sec01__img">
-                            <img src="assets/profile.jpg" alt="" class="profile-img">
-                        </li>
-                        <li class="sec01__details display fd-col">
-                            <p class="sec01__desc f-16">
-                                I’m a tech enthusiast on a mission to blend creativity, problem-solving, and innovation. With a passion for UI design, web development, and data analytics, I thrive on turning challenges into sleek, user-friendly solutions. I’m always up for a new skill—curiosity is my compass, guiding me to explore and improve.
-                                <br><br>
-                                My mantra? "If it’s not pretty, it’s a work in progress." I believe in keeping things neat, organized, and visually appealing because great design is all about the details.
-                                <br><br>
-                                Beyond the screen, you’ll find me with a cup of iced coffee, lost in a good book or the latest series and movies. These moments recharge my creativity and keep my problem-solving sharp. Here’s to creating beautiful, functional, and fun digital experiences! 🥂✨
-                            </p>
-                            <p class="sec01__quote f-16m montagu ta-c display jc-c">
-                                “Confidence is like an umbrella, it won't stop the rain but it will help you withstand the rain.”
-                            </p>
-                        </li>
-                    </ul>
-                </div>
-            </section>
+                </section>
 
-            <section class="sec02 section">
-                <div class="sec02__content w-1200 display fd-col" data-aos="fade-up" id="work">
-                    <h1 class="f-64b montagu ta-c"><span class="pink">Work</span> Experience</h1>
-                    <ul class="sec02__layout w-1200">
-                        <li class="sec02__layout-item"><!--job03-->
-                            <div class="sec02__layout-item-row">
-                                <div class="item-display">
-                                    <div class="job-title f-28b pink">Web Developer</div>
-                                    <div class="company f-20m">
-                                        <a href="https://right-core.jp/" target="_blank">
-                                            Rightcore Inc.
-                                        </a>
-                                    </div>
-                                    <div class="date-setup f-18">
-                                        November 2023 - present <br>
-                                        Hybrid ∙ Full-time
-                                    </div>
-                                </div>
-                                <div class="item-hidden">
-                                    <div class="item-title f-16m pink">Award/s:</div>
-                                    <ul class="awards-list f-16">
-                                        <li>Recognized as the 2024 MVP for Coders</li>
-                                    </ul>
-
-                                    <div class="item-title f-16m pink">Roles/Responsibilities:</div>
-                                    <ul class="roles-responsibilities f-16"> 
-                                        <li>Translate UI/UX design Figma wireframes into code for web and landing pages.</li>
-                                        <li>Develop responsive and user-friendly web interfaces using HTML, CSS, and JavaScript.</li>
-                                        <li>Transforming static HTML into dynamic PHP templates for WordPress, integrating necessary functions and loops for performance and customization.</li>
-                                        <li>Implement custom post types and smart custom fields (SCF) to create flexible, scalable WordPress content structures.</li>
-                                        <li>Utilize WordPress admin for website management and maintenance.</li>
-                                        <li>Create web pages tailored to Japanese clients' needs.</li>
-                                        <li>Organize code according to standards set by a Japanese company</li>
-                                        <li>Conduct thorough code reviews to ensure code quality, maintainability, and adherence to project standards.</li>
-                                        <li>Facilitated weekly meetings as chairperson to ensure alignment and effective communication.</li>
-                                    </ul>
-    
-                                    <div class="item-title f-16m pink">Technology/Tools:</div>
-                                    <ul class="technology"> 
-                                        <li class="technology-item">
-                                            <div class="tech-logo"><img src="assets/logo/html.svg"></div>
-                                            <div class="tech-name f-12 display">HTML</div>
-                                        </li>
-                                        <li class="technology-item">
-                                            <div class="tech-logo"><img src="assets/logo/css.svg"></div>
-                                            <div class="tech-name f-12 display">CSS</div>
-                                        </li>
-                                        <li class="technology-item">
-                                            <div class="tech-logo"><img src="assets/logo/javascript.svg"></div>
-                                            <div class="tech-name f-12 display">JavaScript</div>
-                                        </li>
-                                        <li class="technology-item">
-                                            <div class="tech-logo"><img src="assets/logo/wordpress.svg"></div>
-                                            <div class="tech-name f-12 display">WordPress</div>
-                                        </li>
-                                        <li class="technology-item">
-                                            <div class="tech-logo"><img src="assets/logo/figma.svg"></div>
-                                            <div class="tech-name f-12 display">Figma</div>
-                                        </li>
-                                        <li class="technology-item">
-                                            <div class="tech-logo"><img src="assets/logo/vscode.svg"></div>
-                                            <div class="tech-name f-12 display">VSCode</div>
-                                        </li>
-                                        <li class="technology-item">
-                                            <div class="tech-logo"><img src="assets/logo/filezilla.svg"></div>
-                                            <div class="tech-name f-12 display">FileZilla</div>
-                                        </li>
-                                        <li class="technology-item">
-                                            <div class="tech-logo"><img src="assets/logo/php.png"></div>
-                                            <div class="tech-name f-12 display">PHP</div>
-                                        </li>
-                                    </ul>
-                                </div>
-                                <div class="btn__layout__small display">
-                                    <button type="button" class="btn-toggle f-18m ta-c">
-                                        See More
-                                        <i class="fas fa-chevron-down"></i>
-                                    </button>
-                                </div>
+                <!-- row4 -->
+                <div class="df row4 g-30">
+                    <!-- education -->
+                    <section class="education">
+                        <div class="content df fd-col g-30">
+                            <div class="title g-10 pink f-24b mont display">
+                                <i class="fa-solid fa-school"></i>
+                                <h3>Education</h3>
                             </div>
-                        </li>
-                        <li class="sec02__layout-item reverse"><!--job02-->
-                            <div class="sec02__layout-item-row">
-                                <div class="item-display">
-                                    <div class="job-title f-28b pink">Software Developer Intern</div>
-                                    <div class="company f-20m">
-                                        <a href="https://www.rcbc.com/" target="_blank">
-                                            Rizal Commercial Banking Corporation (RCBC)
-                                        </a>
+                            <ul class="df fd-col g-20">
+                                <li class="item df fd-col g-10">
+                                    <div class="head">
+                                        <h6 class="f-18b">BS in Computer Engineering</h6>
+                                        <p class="f-16">Adamson University</p>
                                     </div>
-                                    <div class="date-setup f-18">
-                                        Data Science and Analytics Group (DSAG) <br>
-                                        June 2023 - August 2023 <br>
-                                        Hybrid ∙ Internship
-                                    </div>
-                                </div>
-                                <div class="item-hidden">
-                                    <div class="item-title f-16m pink">Roles/Responsibilities:</div>
-                                    <ul class="roles-responsibilities f-16"> 
-                                        <li>Front-end development team lead for a data dictionary web app within DSAG at RCBC, ensuring alignment with project objectives, and presented the project to project stakeholders.</li>
-                                        <li>Utilized Figma for wireframing and team collaboration, HTML and Bootstrap for optimized front-end, and Django with Python Jinja for back-end.</li>
-                                        <li>Optimized Docker for operation and Git for version control, alongside modifying the sidebar design.</li>
-                                        <li>Oversaw 'Manage users' page, implementing CRUD functions and user addition through modal based on requirements.</li>
-                                        <li>Managed 'Register Meta Data - Database' page, facilitating RDBMS registration through forms and error handling.</li>
-                                        <li>Responsible for the 'About' page within the web application.</li>
+                                    <ul class="ed_info">
+                                        <li>1st Runner Up - Regional CpE Challenge Quiz Bowl <span class="gray">(2022)</span></li>
+                                        <li>Batch Top 2 - 4th year, 2nd semester</li>
+                                        <li>Secretary - CpE Seminars & Field Trips Course</li>
                                     </ul>
-    
-                                    <div class="item-title f-16m pink">Technology/Tools:</div>
-                                    <ul class="technology"> 
-                                        <li class="technology-item">
-                                            <div class="tech-logo"><img src="assets/logo/html.svg"></div>
-                                            <div class="tech-name f-12 display">HTML</div>
-                                        </li>
-                                        <li class="technology-item">
-                                            <div class="tech-logo"><img src="assets/logo/css.svg"></div>
-                                            <div class="tech-name f-12 display">CSS</div>
-                                        </li>
-                                        <li class="technology-item">
-                                            <div class="tech-logo"><img src="assets/logo/figma.svg"></div>
-                                            <div class="tech-name f-12 display">Figma</div>
-                                        </li>
-                                        <li class="technology-item">
-                                            <div class="tech-logo"><img src="assets/logo/vscode.svg"></div>
-                                            <div class="tech-name f-12 display">VSCode</div>
-                                        </li>
-                                        <li class="technology-item">
-                                            <div class="tech-logo"><img src="assets/logo/docker.svg"></div>
-                                            <div class="tech-name f-12 display">Docker</div>
-                                        </li>
-                                        <li class="technology-item">
-                                            <div class="tech-logo"><img src="assets/logo/gitlab.svg"></div>
-                                            <div class="tech-name f-12 display">GitLab</div>
-                                        </li>
-                                        <li class="technology-item">
-                                            <div class="tech-logo"><img src="assets/logo/git.svg"></div>
-                                            <div class="tech-name f-12 display">Git</div>
-                                        </li>
-                                        <li class="technology-item">
-                                            <div class="tech-logo"><img src="assets/logo/bootstrap.svg"></div>
-                                            <div class="tech-name f-12 display">Bootstrap</div>
-                                        </li>
-                                        <li class="technology-item">
-                                            <div class="tech-logo"><img src="assets/logo/django.svg"></div>
-                                            <div class="tech-name f-12 display">Django</div>
-                                        </li>
-                                        <li class="technology-item">
-                                            <div class="tech-logo"><img src="assets/logo/jinja.png"></div>
-                                            <div class="tech-name f-12 display">Jinja</div>
-                                        </li>
-                                        <li class="technology-item">
-                                            <div class="tech-logo"><img src="assets/logo/sql.png"></div>
-                                            <div class="tech-name f-12 display">SQL</div>
-                                        </li>
-                                    </ul>
-                                </div>
-                                <div class="btn__layout__small display">
-                                    <button type="button" class="btn-toggle f-18m ta-c">
-                                        See More
-                                        <i class="fas fa-chevron-down"></i>
-                                    </button>
-                                </div>
-                            </div>
-                        </li>
-                        <li class="sec02__layout-item"><!--job01-->
-                            <div class="sec02__layout-item-row">
-                                <div class="item-display">
-                                    <div class="job-title f-28b pink">Back-end Developer Intern</div>
-                                    <div class="company f-20m">
-                                        <a href="https://www.facebook.com/melhamconstruction" target="_blank">
-                                            Melham Construction Corporation (MCC)
-                                        </a>
-                                    </div>
-                                    <div class="date-setup f-18">
-                                        IT Department <br>
-                                        July 2022 - August 2022 <br>
-                                        Remote ∙ Internship
-                                    </div>
-                                </div>
-                                <div class="item-hidden">
-                                    <div class="item-title f-16m pink">Roles/Responsibilities:</div>
-                                    <ul class="roles-responsibilities f-16"> 
-                                        <li>Implement CRUD functionalities into the Learning Management System Project. </li>
-                                        <li>Modifed ‘Announcement’ and ‘Discussion’ webpage layouts using HTML and PHP. </li>
-                                        <li>Improve user experience by updating page designs with the Bootstrap framework. </li>
-                                        <li>Administer database operations via phpMyAdmin to support system functionality. </li>
-                                        <li>Guarantee optimal performance and user satisfaction by employing AJAX technology.</li>
-                                    </ul>
-    
-                                    <div class="item-title f-16m pink">Technology/Tools:</div>
-                                    <ul class="technology"> 
-                                        <li class="technology-item">
-                                            <div class="tech-logo"><img src="assets/logo/html.svg"></div>
-                                            <div class="tech-name f-12 display">HTML</div>
-                                        </li>
-                                        <li class="technology-item">
-                                            <div class="tech-logo"><img src="assets/logo/css.svg"></div>
-                                            <div class="tech-name f-12 display">CSS</div>
-                                        </li>
-                                        <li class="technology-item">
-                                            <div class="tech-logo"><img src="assets/logo/vscode.svg"></div>
-                                            <div class="tech-name f-12 display">VSCode</div>
-                                        </li>
-                                        <li class="technology-item">
-                                            <div class="tech-logo"><img src="assets/logo/php.png"></div>
-                                            <div class="tech-name f-12 display">PHP</div>
-                                        </li>
-                                        <li class="technology-item">
-                                            <div class="tech-logo"><img src="assets/logo/ajax.png"></div>
-                                            <div class="tech-name f-12 display">AJAX</div>
-                                        </li>
-                                        <li class="technology-item">
-                                            <div class="tech-logo"><img src="assets/logo/phpmyadmin.png"></div>
-                                            <div class="tech-name f-12 display">phpMyAdmin</div>
-                                        </li>
-                                        <li class="technology-item">
-                                            <div class="tech-logo"><img src="assets/logo/bootstrap.svg"></div>
-                                            <div class="tech-name f-12 display">Bootstrap</div>
-                                        </li>
-                                        <li class="technology-item">
-                                            <div class="tech-logo"><img src="assets/logo/sql.png"></div>
-                                            <div class="tech-name f-12 display">SQL</div>
-                                        </li>
-                                    </ul>
-                                </div>
-                                <div class="btn__layout__small display">
-                                    <button type="button" class="btn-toggle f-18m ta-c">
-                                        See More
-                                        <i class="fas fa-chevron-down"></i>
-                                    </button>
-                                </div>
-                            </div>
-                        </li>
-                    </ul>
-                </div>
-            </section>
-
-            <section class="sec03 section">
-                <div class="sec03__content w-1200" data-aos="fade-up" id="projects">
-                    <div class="sec03__head display jc-c fd-col">
-                        <div class="title ta-c">
-                            <h1 class="f-64b montagu">Projects <span class="pink">Developed</span></h1>
-                            <!-- <p class="f-28">Website Development</p> -->
-                        </li>
-                        <ul class="sec03__head-cat display jc-c">
-                            <li class="detail__item display">
-                                <div class="detail__item-head f-24 bg-m" id="no-websites"></div>
-                                <p class="detail__item-desc ta-s">
-                                    Websites
-                                </p>
-                            </li> 
-                            <li class="detail__item display">
-                                <div class="detail__item-head f-24 bg-m" id="no-landing"></div>
-                                <p class="detail__item-desc ta-s">
-                                    Landing pages
-                                </p>
-                            </li> 
-                            <li class="detail__item display">
-                                <div class="detail__item-head f-24 bg-m" id="no-design"></div>
-                                <p class="detail__item-desc ta-s">
-                                    Design
-                                </p>
-                            </li> 
-                            <li class="detail__item display">
-                                <div class="detail__item-head f-24 bg-m" id="no-personal"></div>
-                                <p class="detail__item-desc ta-s">
-                                    Personal
-                                </p>
-                            </li> 
-                        </ul>
-                    </div>
-                    
-                    <ul class="sec03__layout">
-                        <li class="sec03__item" data-type="personal"><!--ishikawa-->
-                            <a href="https://apuribakari.sakura.ne.jp/bridal-ishikawa/" class="sec03__link" target="_blank">
-                                <img src="assets/projects/ishikawa.png" alt="">
-                                <div class="project__details">
-                                    <p class="project__date f-12">2025 | Rightcore Inc.</p>
-                                    <h5 class="project__title f-24b">ブライダルいしかわ</h5>
-                                    <h6 class="project__trans f-20">Bridal Ishikawa </h6>
-                                </div>
-                            </a>
-                        </li>
-                        <li class="sec03__item" data-type="website"><!--insite-->
-                            <a href="https://offshoretraining.sakura.ne.jp/training_n/" class="sec03__link" target="_blank">
-                                <img src="assets/projects/train-insite.png" alt="">
-                                <div class="project__details">
-                                    <p class="project__date f-12">2025 | Personal</p>
-                                    <h5 class="project__title f-24b">Insite</h5>
-                                    <h6 class="project__trans f-20">Business Search</h6>
-                                </div>
-                            </a>
-                        </li>
-                        <li class="sec03__item" data-type="website"><!--enishi-->
-                            <a href="https://enishi-reform.com/" class="sec03__link" target="_blank">
-                                <img src="assets/projects/enishi.png" alt="">
-                                <div class="project__details">
-                                    <p class="project__date f-12">2025 | Rightcore Inc.</p>
-                                    <h5 class="project__title f-24b">株式会社縁</h5>
-                                    <h6 class="project__trans f-20">Enishi Co., Ltd</h6>
-                                </div>
-                            </a>
-                        </li>
-                        <li class="sec03__item" data-type="landing"><!--seitai-->
-                            <a href="https://y-athletecare-lp.com/" class="sec03__link" target="_blank">
-                                <img src="assets/projects/y-athlete-care.png" alt="">
-                                <div class="project__details">
-                                    <p class="project__date f-12">2025 | Rightcore Inc.</p>
-                                    <h5 class="project__title f-24b">整体院ワイアスリートケア</h5>
-                                    <h6 class="project__trans f-20">Seitai Clinic Y-Athlete Care</h6>
-                                </div>
-                            </a>
-                        </li>
-                        <li class="sec03__item" data-type="design"><!--celestial-->
-                            <a href="https://www.figma.com/proto/hqBImlJ6qe1UuzrYtut62T/celestial-grove?node-id=0-1&p=f&t=fKjxO899tpvPT6vK-0&scaling=min-zoom&content-scaling=fixed&page-id=0%3A1" class="sec03__link" target="_blank">
-                                <img src="assets/projects/celestial.png" alt="">
-                                <div class="project__details">
-                                    <p class="project__date f-12">2025 | Design</p>
-                                    <h5 class="project__title f-24b">Celestial Grove</h5>
-                                    <h6 class="project__trans f-20"> </h6>
-                                </div>
-                            </a>
-                        </li>
-                        <li class="sec03__item" data-type="website"><!--mdog-->
-                            <a href="https://apuribakari.sakura.ne.jp/m-dog/" class="sec03__link" target="_blank">
-                                <img src="assets/projects/mdog.png" alt="">
-                                <div class="project__details">
-                                    <p class="project__date f-12">2025 | Rightcore Inc.</p>
-                                    <h5 class="project__title f-24b">ペットサロンm-dog</h5>
-                                    <h6 class="project__trans f-20">Pet Salon M-dog</h6>
-                                </div>
-                            </a>
-                        </li>
-                        <li class="sec03__item" data-type="website"><!--rocketbase-->
-                            <a href="https://studio-rocket.jp/" class="sec03__link" target="_blank">
-                                <img src="assets/projects/rocket-base.png" alt="">
-                                <div class="project__details">
-                                    <p class="project__date f-12">2025 | Rightcore Inc.</p>
-                                    <h5 class="project__title f-24b">合同会社ロケットベース</h5>
-                                    <h6 class="project__trans f-20">Rocket Base</h6>
-                                </div>
-                            </a>
-                        </li>
-                        <li class="sec03__item" data-type="website"><!--wagyu hormone-->
-                            <a href="https://wagyuhorumon-kotatsu.com" class="sec03__link" target="_blank">
-                                <img src="assets/projects/offal.png" alt="">
-                                <div class="project__details">
-                                    <p class="project__date f-12">2025 | Rightcore Inc.</p>
-                                    <h5 class="project__title f-24b">和牛ホルモンこたつ</h5>
-                                    <h6 class="project__trans f-20">Wagyu Hormone Kotatsu </h6>
-                                </div>
-                            </a>
-                        </li>
-                        <li class="sec03__item" data-type="website"><!--yayoi-->
-                            <a href="https://yayoigoodfood.com" class="sec03__link" target="_blank">
-                                <img src="assets/projects/yayoi.png" alt="">
-                                <div class="project__details">
-                                    <p class="project__date f-12">2025 | Rightcore Inc.</p>
-                                    <h5 class="project__title f-24b">株式会社ヤヨイ</h5>
-                                    <h6 class="project__trans f-20">Yayoi</h6>
-                                </div>
-                            </a>
-                        </li>
-                        <li class="sec03__item" data-type="website"><!--hakubounce-->
-                            <a href="https://cliphp.sakura.ne.jp/hakubounce" class="sec03__link" target="_blank">
-                                <img src="assets/projects/hakubounce.png" alt="">
-                                <div class="project__details">
-                                    <p class="project__date f-12">2025 | Rightcore Inc.</p>
-                                    <h5 class="project__title f-24b">hakubounce合同会社</h5>
-                                    <!-- <h6 class="project__trans f-20">Yayoi</h6> -->
-                                </div>
-                            </a>
-                        </li>
-                        <li class="sec03__item" data-type="website"><!--bodyshop-->
-                            <a href="https://bodyshop-forest.com/" class="sec03__link" target="_blank">
-                                <img src="assets/projects/bodyshopforest.png" alt="">
-                                <div class="project__details">
-                                    <p class="project__date f-12">2025 | Rightcore Inc.</p>
-                                    <h5 class="project__title f-24b">Bodyshop Forest</h5>
-                                </div>
-                            </a>
-                        </li>
-                        <li class="sec03__item" data-type="website"><!--rush-->
-                            <a href="https://koseibunseki.net/" class="sec03__link" target="_blank">
-                                <img src="assets/projects/rush.png" alt="">
-                                <div class="project__details">
-                                    <p class="project__date f-12">2025 | Rightcore Inc.</p>
-                                    <h5 class="project__title f-24b">Rush</h5>
-                                </div>
-                            </a>
-                        </li>
-                        <li class="sec03__item" data-type="website"><!--hayashi-->
-                            <a href="https://hayashisetsubi.com" class="sec03__link" target="_blank">
-                                <img src="assets/projects/hayashi.png" alt="">
-                                <div class="project__details">
-                                    <p class="project__date f-12">2025 | Rightcore Inc.</p>
-                                    <h5 class="project__title f-24b">株式会社林設備-sプラン</h5>
-                                    <h6 class="project__trans f-20">Hayashi Equipment Co., Ltd. </h6>
-                                </div>
-                            </a>
-                        </li>
-                        <li class="sec03__item" data-type="website"><!--taharayan-->
-                            <a href="https://yakiniku-tawara.jp/" class="sec03__link" target="_blank">
-                                <img src="assets/projects/taharayan.png" alt="">
-                                <div class="project__details">
-                                    <p class="project__date f-12">2025 | Rightcore Inc.</p>
-                                    <h5 class="project__title f-24b">有限会社田原屋本店</h5>
-                                    <h6 class="project__trans f-20">Tahara-ya Co., Ltd.</h6>
-                                </div>
-                            </a>
-                        </li>
-                        <li class="sec03__item" data-type="website"><!--yougakukan-->
-                            <a href="https://yogakukan.com/" class="sec03__link" target="_blank">
-                                <img src="assets/projects/yogakukan.png" alt="">
-                                <div class="project__details">
-                                    <p class="project__date f-12">2025 | Rightcore Inc.</p>
-                                    <h5 class="project__title f-24b">陽学館</h5>
-                                    <h6 class="project__trans f-20">Yougakukan</h6>
-                                </div>
-                            </a>
-                        </li>
-                        <li class="sec03__item" data-type="website"><!--best-s-->
-                            <a href="https://bodyshopbest.com" class="sec03__link" target="_blank">
-                                <img src="assets/projects/best.png" alt="">
-                                <div class="project__details">
-                                    <p class="project__date f-12">2025 | Rightcore Inc.</p>
-                                    <h5 class="project__title f-24b">株式会社板金塗装best</h5>
-                                    <h6 class="project__trans f-20">Best-S Plan for Sheet Metal Painting Co., Ltd</h6>
-                                </div>
-                            </a>
-                        </li>
-                        <li class="sec03__item" data-type="website"><!--hyakushoukai-->
-                            <a href="https://hyakushoukai.com/" class="sec03__link" target="_blank">
-                                <img src="assets/projects/hyakushokai.png" alt="">
-                                <div class="project__details">
-                                    <p class="project__date f-12">2025 | Rightcore Inc.</p>
-                                    <h5 class="project__title f-24b">株式会社百笑会</h5>
-                                    <h6 class="project__trans f-20">Hyakushoukai Co., Ltd.</h6>
-                                </div>
-                            </a>
-                        </li>
-                        <li class="sec03__item" data-type="website"><!--atelier bigi-->
-                            <a href="https://timehospital.co.jp/" class="sec03__link" target="_blank">
-                                <img src="assets/projects/atelier-bigi.png" alt="">
-                                <div class="project__details">
-                                    <p class="project__date f-12">2024 | Rightcore Inc.</p>
-                                    <h5 class="project__title f-24b">アトリエビギ</h5>
-                                    <h6 class="project__trans f-20">Atelier Bigi</h6>
-                                </div>
-                            </a>
-                        </li>
-                        <li class="sec03__item" data-type="website"><!--nishihama-->
-                            <a href="https://nishihama2012.com/" class="sec03__link" target="_blank">
-                                <img src="assets/projects/nishihama.png" alt="">
-                                <div class="project__details">
-                                    <p class="project__date f-12">2024 | Rightcore Inc.</p>
-                                    <h5 class="project__title f-24b">株式会社西浜設備</h5>
-                                    <h6 class="project__trans f-20">Nishihama Equipment Co., Ltd</h6>
-                                </div>
-                            </a>
-                        </li>
-                        <li class="sec03__item" data-type="website"><!--sen-->
-                            <a href="https://shiawase-kaigo.net/" class="sec03__link" target="_blank">
-                                <img src="assets/projects/sen.png" alt="">
-                                <div class="project__details">
-                                    <p class="project__date f-12">2024 | Rightcore Inc.</p>
-                                    <h5 class="project__title f-24b">合同会社sen</h5>
-                                    <h6 class="project__trans f-20">Sen LLC</h6>
-                                </div>
-                            </a>
-                        </li>
-                        <li class="sec03__item" data-type="landing"><!--kyorutsu lp-->
-                            <a href="https://ldfs.net/lp/" class="sec03__link" target="_blank">
-                                <img src="assets/projects/kyorutsu.png" alt="">
-                                <div class="project__details">
-                                    <p class="project__date f-12">2024 | Rightcore Inc.</p>
-                                    <h5 class="project__title f-24b">株式会社共立技研</h5>
-                                    <h6 class="project__trans f-20">Kyorutsu Giken Co., Ltd. </h6>
-                                </div>
-                            </a>
-                        </li>
-                        <!--alka-->
-                        <!-- <li class="sec03__item" data-type="website">
-                            <a href="https://alka.co.jp/" class="sec03__link" target="_blank">
-                                <img src="assets/projects/alka.png" alt="">
-                                <div class="project__details">
-                                    <p class="project__date f-12">2024 | Rightcore Inc.</p>
-                                    <h5 class="project__title f-24b">株式会社シュリット</h5>
-                                    <h6 class="project__trans f-20">Schritt Co., Ltd.</h6>
-                                </div>
-                            </a>
-                        </li> -->
-                        <li class="sec03__item" data-type="website"><!--enrich-->
-                            <a href="https://enrichgarden.co.jp/" class="sec03__link" target="_blank">
-                                <img src="assets/projects/enrich-garden.png" alt="">
-                                <div class="project__details">
-                                    <p class="project__date f-12">2024 | Rightcore Inc.</p>
-                                    <h5 class="project__title f-24b">株式会社enrich-garden</h5>
-                                    <h6 class="project__trans f-20">Enrich Garden Co., Ltd</h6>
-                                </div>
-                            </a>
-                        </li>
-                        <li class="sec03__item" data-type="website"><!--adachi-->
-                            <a href="https://mayuya.rcpr-lp.com/" class="sec03__link" target="_blank">
-                                <img src="assets/projects/adachi.png" alt="">
-                                <div class="project__details">
-                                    <p class="project__date f-12">2024 | Rightcore Inc.</p>
-                                    <h5 class="project__title f-24b">安達株式会社</h5>
-                                    <h6 class="project__trans f-20">Adachi Co., Ltd</h6>
-                                </div>
-                            </a>
-                        </li>
-                        <li class="sec03__item" data-type="website"><!--aludorado-->
-                            <a href="https://kims-roppongi.com/" class="sec03__link" target="_blank">
-                                <img src="assets/projects/aludorado.png" alt="">
-                                <div class="project__details">
-                                    <p class="project__date f-12">2024 | Rightcore Inc.</p>
-                                    <h5 class="project__title f-24b">アルドラード焼肉kims-roppongi</h5>
-                                    <h6 class="project__trans f-20">Aldorado Yakiniku Kim's Roppongi</h6>
-                                </div>
-                            </a>
-                        </li>
-                        <li class="sec03__item" data-type="website"><!--masaki-->
-                            <a href="https://masakikensou2009.com/" class="sec03__link" target="_blank">
-                                <img src="assets/projects/masaki-kensuo.png" alt="">
-                                <div class="project__details">
-                                    <p class="project__date f-12">2024 | Rightcore Inc.</p>
-                                    <h5 class="project__title f-24b">将樹建装</h5>
-                                    <h6 class="project__trans f-20">Masaki Construction</h6>
-                                </div>
-                            </a>
-                        </li>
-                        <li class="sec03__item" data-type="website"><!--space-->
-                            <a href="https://space-kk.com/" class="sec03__link" target="_blank">
-                                <img src="assets/projects/space.png" alt="">
-                                <div class="project__details">
-                                    <p class="project__date f-12">2024 | Rightcore Inc.</p>
-                                    <h5 class="project__title f-24b">株式会社スペース</h5>
-                                    <h6 class="project__trans f-20">Space Co., Ltd.</h6>
-                                </div>
-                            </a>
-                        </li>
-                        <li class="sec03__item" data-type="website"><!--lightclover-->
-                            <a href="https://light-clover-global.com/" class="sec03__link" target="_blank">
-                                <img src="assets/projects/lightclover.png" alt="">
-                                <div class="project__details">
-                                    <p class="project__date f-12">2024 | Rightcore Inc.</p>
-                                    <h5 class="project__title f-24b">株式会社lightclover</h5>
-                                    <h6 class="project__trans f-20">Lightclover Co., Ltd.</h6>
-                                </div>
-                            </a>
-                        </li>
-                        <li class="sec03__item" data-type="website"><!--hair salon bambi-->
-                            <a href="https://hairsalon-bambi.com/" class="sec03__link" target="_blank">
-                                <img src="assets/projects/hairsalon-bambi.png" alt="">
-                                <div class="project__details">
-                                    <p class="project__date f-12">2024 | Rightcore Inc.</p>
-                                    <h5 class="project__title f-24b">ヘアーサロンバンビ </h5>
-                                    <h6 class="project__trans f-20">Hair Salon Bambi</h6>
-                                </div>
-                            </a>
-                        </li>
-                        <li class="sec03__item" data-type="website"><!--meika-->
-                            <a href="https://meika-kensetsu.com/" class="sec03__link" target="_blank">
-                                <img src="assets/projects/meika.png" alt="">
-                                <div class="project__details">
-                                    <p class="project__date f-12">2024 | Rightcore Inc.</p>
-                                    <h5 class="project__title f-24b">株式会社明佳</h5>
-                                    <h6 class="project__trans f-20">Meika Co., Ltd. </h6>
-                                </div>
-                            </a>
-                        </li>
-                        <li class="sec03__item" data-type="landing"><!--mari lp-->
-                            <a href="https://lp.mari-fortune.jp/" class="sec03__link" target="_blank">
-                                <img src="assets/projects/mari-fortune.png" alt="">
-                                <div class="project__details">
-                                    <p class="project__date f-12">2024 | Rightcore Inc.</p>
-                                    <h5 class="project__title f-24b">株式会社マリプロジェクト</h5>
-                                    <h6 class="project__trans f-20">Mari Project Co., Ltd.</h6>
-                                </div>
-                            </a>
-                        </li>
-                        <li class="sec03__item" data-type="website"><!--ldhcom-->
-                            <a href="https://l-d-h.com/" class="sec03__link" target="_blank">
-                                <img src="assets/projects/ldhcom.png" alt="">
-                                <div class="project__details">
-                                    <p class="project__date f-12">2024 | Rightcore Inc.</p>
-                                    <h5 class="project__title f-24b">パビリオン.ブルーカンパニー</h5>
-                                    <h6 class="project__trans f-20">Pavilion Blue Company</h6>
-                                </div>
-                            </a>
-                        </li>
-                    </ul>
-                    <div id="pagination"></div>
-                </div> 
-            </section>
-
-            <section class="sec04 section">
-                <div class="sec04__content w-1290" id="skills" data-aos="fade-up">
-                    <div class="ta-c">
-                        <h1 class="f-64b montagu"><span class="pink">Skills</span></h1>
-                        <p class="f-28">Technologies and Tools Used</p>
-                    </div>
-                    <ul class="sec04__layout display jc-c">
-                        <li class="sec04__item display fd-col jc-c">
-                            <div class="sec04__item-logo"><img src="assets/logo/html.svg"></div>
-                            <div class="sec04__item-body f-18 ta-c">HTML</div>
-                        </li>
-                        <li class="sec04__item display fd-col jc-c">
-                            <div class="sec04__item-logo"><img src="assets/logo/css.svg"></div>
-                            <div class="sec04__item-body f-18 ta-c">CSS</div>
-                        </li>
-                        <li class="sec04__item display fd-col jc-c">
-                            <div class="sec04__item-logo"><img src="assets/logo/javascript.svg"></div>
-                            <div class="sec04__item-body f-18 ta-c">JavaScript</div>
-                        </li>
-                        <li class="sec04__item display fd-col jc-c">
-                            <div class="sec04__item-logo"><img src="assets/logo/php.png"></div>
-                            <div class="sec04__item-body f-18 ta-c">PHP</div>
-                        </li>
-                        <li class="sec04__item display fd-col jc-c">
-                            <div class="sec04__item-logo"><img src="assets/logo/wordpress.svg"></div>
-                            <div class="sec04__item-body f-18 ta-c">WordPress</div>
-                        </li>
-                        <li class="sec04__item display fd-col jc-c">
-                            <div class="sec04__item-logo"><img src="assets/logo/vscode.svg"></div>
-                            <div class="sec04__item-body f-18 ta-c">VSCode</div>
-                        </li>
-                        <li class="sec04__item display fd-col jc-c">
-                            <div class="sec04__item-logo"><img src="assets/logo/figma.svg"></div>
-                            <div class="sec04__item-body f-18 ta-c">Figma</div>
-                        </li>
-                        <li class="sec04__item display fd-col jc-c">
-                            <div class="sec04__item-logo"><img src="assets/logo/canva.svg"></div>
-                            <div class="sec04__item-body f-18 ta-c">Canva</div>
-                        </li>
-                        <li class="sec04__item display fd-col jc-c">
-                            <div class="sec04__item-logo"><img src="assets/logo/capcut.jpg"></div>
-                            <div class="sec04__item-body f-18 ta-c">Capcut</div>
-                        </li>
-                        <li class="sec04__item display fd-col jc-c">
-                            <div class="sec04__item-logo"><img src="assets/logo/google.svg"></div>
-                            <div class="sec04__item-body f-18 ta-c">Google Workspace</div>
-                        </li>
-                        <li class="sec04__item display fd-col jc-c">
-                            <div class="sec04__item-logo"><img src="assets/logo/msoffice.svg"></div>
-                            <div class="sec04__item-body f-18 ta-c">Mircosoft Office</div>
-                        </li>
-                        <li class="sec04__item display fd-col jc-c">
-                            <div class="sec04__item-logo"><img src="assets/logo/trello.svg"></div>
-                            <div class="sec04__item-body f-18 ta-c">Trello</div>
-                        </li>
-                        <li class="sec04__item display fd-col jc-c">
-                            <div class="sec04__item-logo"><img src="assets/logo/lucidchart.png"></div>
-                            <div class="sec04__item-body f-18 ta-c">Lucidchart</div>
-                        </li>
-                        <li class="sec04__item display fd-col jc-c">
-                            <div class="sec04__item-logo"><img src="assets/logo/bootstrap.svg"></div>
-                            <div class="sec04__item-body f-18 ta-c">Bootstrap</div>
-                        </li>
-                        <li class="sec04__item display fd-col jc-c">
-                            <div class="sec04__item-logo"><img src="assets/logo/filezilla.svg"></div>
-                            <div class="sec04__item-body f-18 ta-c">FileZilla</div>
-                        </li>
-                        <li class="sec04__item display fd-col jc-c">
-                            <div class="sec04__item-logo"><img src="assets/logo/sql.png"></div>
-                            <div class="sec04__item-body f-18 ta-c">SQL</div>
-                        </li>
-                        <li class="sec04__item display fd-col jc-c">
-                            <div class="sec04__item-logo"><img src="assets/logo/python.svg"></div>
-                            <div class="sec04__item-body f-18 ta-c">Python</div>
-                        </li>
-                        <li class="sec04__item display fd-col jc-c">
-                            <div class="sec04__item-logo"><img src="assets/logo/colab.png"></div>
-                            <div class="sec04__item-body f-18 ta-c">Google Colab</div>
-                        </li>
-                        <li class="sec04__item display fd-col jc-c">
-                            <div class="sec04__item-logo"><img src="assets/logo/phpmyadmin.png"></div>
-                            <div class="sec04__item-body f-18 ta-c">phpMyAdmin</div>
-                        </li>
-                        <li class="sec04__item display fd-col jc-c">
-                            <div class="sec04__item-logo"><img src="assets/logo/github.svg"></div>
-                            <div class="sec04__item-body f-18 ta-c">GitHub</div>
-                        </li>
-                        <li class="sec04__item display fd-col jc-c">
-                            <div class="sec04__item-logo"><img src="assets/logo/gitlab.svg"></div>
-                            <div class="sec04__item-body f-18 ta-c">GitLab</div>
-                        </li>
-                        <li class="sec04__item display fd-col jc-c">
-                            <div class="sec04__item-logo"><img src="assets/logo/git.svg"></div>
-                            <div class="sec04__item-body f-18 ta-c">Git</div>
-                        </li>
-                        <li class="sec04__item display fd-col jc-c">
-                            <div class="sec04__item-logo"><img src="assets/logo/xampp.png"></div>
-                            <div class="sec04__item-body f-18 ta-c">XAMPP</div>
-                        </li>
-                        <li class="sec04__item display fd-col jc-c">
-                            <div class="sec04__item-logo"><img src="assets/logo/docker.svg"></div>
-                            <div class="sec04__item-body f-18 ta-c">Docker</div>
-                        </li>
-                    </ul>
-                </div>
-            </section>
-
-            <section class="sec05 section">
-                <div class="sec05__content w-1200" id="certificates" data-aos="fade-up">
-                    <h1 class="f-64b montagu ta-c">Certificates</h1>
-                    <ul class="sec05__layout">
-                        <li class="sec05__gallery">
-                            <nav class="filter-certificates df jc-c">
-                                <div class="certificates-category display jc-c">
-                                    <span class="f-18m item active" data-name="all">All</span>
-                                    <span class="f-18m item" data-name="web-development">Web Development</span>
-                                    <span class="f-18m item" data-name="ui-ux">UI/UX</span>
-                                    <span class="f-18m item" data-name="data-science">Data Science</span>  
-                                </div>
-                            </nav>
-                            
-                            <ul class="certificates-gallery df">
-                                <li class="certificate" data-name="data-science">
-                                    <div class="image-container">
-                                        <img src="assets/certifications/data-science/1-data-science-with-python.png" alt="">
-                                    </div>
-                                    <div class="description-container">
-                                        <p class="description">
-                                            In this course, I  had the opportunity to acquire a comprehensive foundation in Data Science using Python.
-                                            This encompassed a thorough exploration of key libraries such as NumPy, Pandas, Stats, and Scikit-learn,
-                                            in addition to proficiency in data visualization through Matplotlib and Seaborn. Furthermore, 
-                                            I delved into crucial topics such as Statistics, Data Wrangling, Feature Engineering, Exploratory 
-                                            Data Analysis, and Feature Selection.
-                                            This learning journey has proven to be highly insightful, equipping me with valuable knowledge and skills
-                                            for enhancing my capabilities in the field of data science. It has enabled me to develop a deeper 
-                                            understanding of how data can be leveraged to drive informed decision-making, a critical facet contributing 
-                                            to the success of businesses and organizations.
-                                        </p>
-                                        
-                                    </div>
                                 </li>
-                                <li class="certificate" data-name="data-science">
-                                    <div class="image-container">
-                                        <img src="assets/certifications/data-science/2-foundations.png" alt="">
-                                    </div>
-                                    <div class="description-container">
-                                        <p class="description">
-                                            The initial section of Google's Data Analytics course, titled "Foundations: Data, Data, Everywhere," 
-                                            acts as an introductory roadmap to the realm of data analytics. It emphasizes the common nature 
-                                            and significance of data in today's digital world, highlighting its crucial role across various 
-                                            spheres of life and business. The chapter introduces fundamental concepts and terminology crucial 
-                                            for comprehending data analytics, including data sets, variables, metrics, and algorithms. 
-                                            It outlines the data lifecycle, covering stages from data collection to utilization, to ensure 
-                                            the integrity and efficiency of data-driven endeavors. Moreover, ethical considerations in data 
-                                            analytics are emphasized, emphasizing the importance of maintaining standards of privacy, 
-                                            transparency, and bias mitigation throughout the analytical process.
-                                        </p>
-                                    </div>
-                                </li>
-                                <li class="certificate" data-name="web-development">
-                                    <div class="image-container">
-                                        <img src="assets/certifications/web-development/1-intro-to-web-dev.png" alt="">
-                                    </div>
-                                    <div class="description-container">
-                                        <p class="description">
-                                            In this course, I was able to describe the Web Application Development Ecosystem and terminologies 
-                                            like front-end developer, back-end, server-side, and full stack. This course also enabled me to identify 
-                                            developer tools and integrated development environments (IDEs) used by web developers as well as creating structure 
-                                            web pages using HTML and styling them with CSS which eventually developed dynamic web pages with interactive features 
-                                            using JavaScript.
-                                            This introductory course, lays the essential foundation for aspiring web developers like myself. 
-                                            Through hands-on projects, I gained practical experience in crafting web pages, which sets me on a path to master 
-                                            these fundamental web development technologies and a preparation for more advanced challenges in the said field.
-                                        </p>
-                                    </div>
-                                </li>
-                                <li class="certificate" data-name="web-development">
-                                    <div class="image-container">
-                                        <img src="assets/certifications/web-development/2-intro-to-web-dev-badge.png" alt="">
-                                    </div>
-                                    <div class="description-container">
-                                        <p class="description">
-                                            This badge serves as a recognition of my achievement in mastering the fundamentals of web development 
-                                            through the completion of the 'Introduction to Web Development with HTML, CSS, and JavaScript' course. 
-                                            It symbolizes the dedication and effort I invested in acquiring essential skills in creating and styling 
-                                            web content using HTML and CSS, as well as enhancing interactivity and functionality through JavaScript programming. 
-                                            This accomplishment signifies my readiness to embark on further endeavors in the field of web development and 
-                                            underscores my commitment to continuous learning and growth in this dynamic domain.
-                                        </p>
-                                    </div>
-                                </li>
-                                <li class="certificate" data-name="web-development">
-                                    <div class="image-container">
-                                        <img src="assets/certifications/web-development/3-build-website-using-wordpress.png" alt="">
-                                    </div>
-                                    <div class="description-container">
-                                        <p class="description">
-                                            Completing the "Build a Full Website using WordPress" course has provided 
-                                            me with a comprehensive understanding of WordPress fundamentals, including themes, plugins, 
-                                            and customization options. I've learned to choose the right theme, customize designs, and optimize 
-                                            websites for performance, SEO, and security. Creating engaging content and ensuring responsive 
-                                            design were emphasized, along with the importance of testing, iteration, and troubleshooting. 
-                                            Overall, I've gained the skills and confidence to develop professional and functional websites 
-                                            using WordPress, from inception to maintenance.
-                                        </p>
-                                    </div>
-                                </li>
-                                <li class="certificate" data-name="ui-ux">
-                                    <div class="image-container">
-                                        <img src="assets/certifications/ui-ux/1-foundations-of-ux.png" alt="">
-                                    </div>
-                                    <div class="description-container">
-                                        <p class="description">
-                                            This course enabled me to have a comprehensive knowledge about the principles of 
-                                            User Interface (UI) and User Experience (UX) Design. From understanding and applying
-                                            the Design Thinking Process to solve real-world problems, the fundamentals of conducting a 
-                                            User Research and Research Methods, the phases of the Product Development Life Cycle, to performing usability testing.
-                                            I've also received an introduction to Design Sprints, its benefits, phases, retrospectives and
-                                            how it is conducted as well as overcoming biases in UX research.
-                                        </p>
-                                    </div>
-                                </li>
-                                <li class="certificate" data-name="ui-ux">
-                                    <div class="image-container">
-                                        <img src="assets/certifications/ui-ux/2-start-the-ux.png" alt="">
-                                    </div>
-                                    <div class="description-container">
-                                        <p class="description">
-                                            The 2nd course for the Google UX certification. 
-                                            In the Google Certification course on UX design, I learned the core stages: Empathize, Define, and Ideate. 
-                                            The Empathize phase taught me how to understand users through research like interviews and surveys.
-                                            In the Define phase, I learned to turn these insights into a clear problem statement. 
-                                            The Ideate phase focused on brainstorming and creative techniques to generate ideas while 
-                                            considering feasibility and user impact. Overall, the course helped me adopt a user-centered 
-                                            approach to design, ensuring effective and innovative solutions.
-                                        </p>
+                                <li class="item df fd-col g-10">
+                                    <div class="head">
+                                        <h6 class="f-18b">Science, Technology, Engineering, and Mathematics (STEM)</h6>
+                                        <p class="f-16">Asia Pacific College</p>
                                     </div>
                                 </li>
                             </ul>
-                            
-                           <div class="preview-overlay"></div>
-
-                            <div class="preview-box">
-                                <span class="close-preview">&times;</span>
-                                <div class="preview-layout">
-                                    <img class="preview-image" src="" alt="">
-                                    <p class="preview-description f-16"></p>
+                        </div>
+                    </section>
+                    <!-- certificates -->
+                    <section class="certificates">
+                        <div class="content df fd-col g-30">
+                            <div class="head display jc-sb g-20">
+                                <div class="title g-10 pink f-24b mont display">
+                                    <i class="fa-solid fa-certificate"></i>
+                                    <h3>Certificates</h3>
                                 </div>
+                                <a href="certificates.html">
+                                    <div class="btn-view display g-5 f-16">
+                                        <p>View All</p>
+                                        <i class="fa-solid fa-chevron-right"></i>
+                                    </div>
+                                </a>
                             </div>
-
-                        </li>
-                    </ul>
+                            <ul class="cert_list df fd-col g-20">
+                                <li class="item">
+                                    <a href="https://coursera.org/share/86af48b6cd690b000b593f5cc679acfd" target="_blank">
+                                        <div class="btn-cert">
+                                            <h6 class="f-18b">Getting Started with Front-End and Web Development</h6>
+                                            <p class="f-16">IBM ∙ <span class="gray">IBM Front-End Developer</span></p>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li class="item">
+                                    <a href="https://coursera.org/share/63eee5be48874b4819af73dced7c8039" target="_blank">
+                                        <div class="btn-cert">
+                                            <h6 class="f-18b">Start the UX Design Process: Empathize, Define, and Ideate</h6>
+                                            <p class="f-16">Google ∙ <span class="gray">Google UI/UX</span></p>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li class="item">
+                                    <a href="https://coursera.org/share/3df30a1c87beffd78f585d90a4682f56e" target="_blank">
+                                        <div class="btn-cert">
+                                            <h6 class="f-18b">Foundations of User Experience (UX) Design</h6>
+                                            <p class="f-16">Google ∙ <span class="gray">Google UI/UX</span></p>
+                                        </div>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </section>
                 </div>
-            </section>
 
-            <section class="sec06 section">
-                <div class="sec06__content w-1200" data-aos="fade-up" id="education">
-                    <h1 class="f-64b montagu ta-c"><span class="pink">Education</span></h1>
-                    <ul class="sec06__layout display fd-col jc-c">
-                        <li class="sec06__item display jc-sb"><!--adu-->
-                            <img src="assets/edu/adu.png" alt="" class="school-img">
-                            <div class="sec06__desc">
-                                <h5 class="f-28"><span class="f-28b">Adamson University</span> - Manila, Philippines</h5>
-                                <div class="sec06__info">
-                                    <h6 class="f-20">
-                                        Bachelor of Science in Computer Engineering <br>
-                                        <!--<span class="italic">August 2018 - July 2023</span> -->
-                                    </h6>
-                                    <ul class="achievements f-16">
-                                        <li>1st runner up: Regional CpE Challenge Quiz Bowl (2022)</li>
-                                        <li>Batch Top 2: 4th year - 2nd semester (2023)</li>
-                                        <li>Secretary for CpE Seminars & Filed-trips Course (2023)</li>
+                <!-- row5 -->
+                <div class="df row5 g-30">
+                    <!-- projects -->
+                    <section class="projects">
+                        <div class="content df fd-col g-30">
+                            <div class="head display jc-sb g-20">
+                                <div class="title g-10 pink f-24b mont display">
+                                    <i class="fa-solid fa-folder-open"></i>
+                                    <h3>Projects</h3>
+                                </div>
+                                <a href="projects.html">
+                                    <div class="btn-view display g-5 f-16">
+                                        <p>View All</p>
+                                        <i class="fa-solid fa-chevron-right"></i>
+                                    </div>
+                                </a>
+                            </div>
+                            <ul class="proj_list df fd-col g-20">
+                                <li class="item" data-type="special">
+                            <a href="special-projects.html#ui-library" target="_blank">
+                                <div class="btn-proj display g-20">
+                                    <img src="assets/special-projects/ui-library.jpg" alt="website thumbnail">
+                                    <ul class="desc df fd-col g-20">
+                                        <li class="head">
+                                            <h6 class="f-18b">UI Library/Module Collection</h6>
+                                            <p class="16 gray">2025 ∙ Rightcore Inc.</p>
+                                            <p class="f-16">Created a modular UI Library with reusable components for dynamic, content-driven websites.</p>
+                                        </li>
+                                        <li class="proj_tech df g-10">
+                                            <p class="f-16b">Tech:</p>
+                                            <ul class="tech-list display g-10">
+                                                <li>WordPress</li>
+                                                <li>PHP</li>
+                                                <li>Search</li>
+                                                <li>CPT</li>
+                                                <li>SCF</li>
+                                                <li>Responsive</li>
+                                                <li>HTML</li>
+                                                <li>CSS</li>
+                                                <li>JavaScript</li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </a>
+                                </li>
+                                <li class="item" data-type="website">
+                                    <a href="https://apuribakari.sakura.ne.jp/bridal-ishikawa/" target="_blank">
+                                        <div class="btn-proj display g-20">
+                                            <img src="assets/projects/bridal-ishikawa.jpg" alt="website thumbnail">
+                                            <ul class="desc df fd-col g-20">
+                                                <li class="head">
+                                                    <h6 class="f-18b">ブライダルいしかわ (Bridal Ishikawa)</h6>
+                                                    <p class="16 gray">2025 ∙ Rightcore Inc.</p>
+                                                    <p class="f-16">Developed a responsive WordPress site for a Japanese bridal costume rental service showcasing wedding and formal attire.</p>
+                                                </li>
+                                                <li class="proj_tech df g-10">
+                                                    <p class="f-16b">Tech:</p>
+                                                    <ul class="tech-list display g-10">
+                                                        <li>WordPress</li>
+                                                        <li>PHP</li>
+                                                        <li>CPT</li>
+                                                        <li>Responsive</li>
+                                                        <li>HTML</li>
+                                                        <li>CSS</li>
+                                                        <li>JavaScript</li>
+                                                    </ul>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li class="item" data-type="landing">
+                                    <a href="https://y-athletecare-lp.com/" target="_blank">
+                                        <div class="btn-proj display g-20">
+                                            <img src="assets/projects/setai.jpg" alt="website thumbnail">
+                                            <ul class="desc df fd-col g-20">
+                                                <li class="head">
+                                                    <h6 class="f-18b">整体院ワイアスリートケア (Seitai Clinic Y-Athlete Care)</h6>
+                                                    <p class="16 gray">2025 ∙ Rightcore Inc.</p>
+                                                    <p class="f-16">Built a WordPress site for a Japanese chiropractic clinic highlighting sports injury treatments and athlete care.</p>
+                                                </li>
+                                                <li class="proj_tech df g-10">
+                                                    <p class="f-16b">Tech:</p>
+                                                    <ul class="tech-list display g-10">
+                                                        <li>WordPress</li>
+                                                        <li>PHP</li>
+                                                        <li>CPT</li>
+                                                        <li>Responsive</li>
+                                                        <li>HTML</li>
+                                                        <li>CSS</li>
+                                                        <li>JavaScript</li>
+                                                    </ul>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </section>
+                    <!-- crafted stats + socials -->
+                    <div class="stats_socials df fd-col g-30">
+                        <!-- crafted so far -->
+                        <section class="crafted">
+                            <div class="content df fd-col g-30">
+                                <div class="title g-10 pink f-24b mont display">
+                                    <i class="fa-solid fa-user-secret"></i>
+                                    <h3>Crafted so far</h3>
+                                </div>
+                                <div class="stats">
+                                    <ul class="df fd-col g-10">
+                                        <li class="item display g-10">
+                                            <h4 class="f-20" id="no-websites"></h4>
+                                            <p class="f-16">Websites</p>
+                                        </li>
+                                        <li class="item display g-10">
+                                            <h4 class="f-20" id="no-landing"></h4>
+                                            <p class="f-16">Landing pages/sites</p>
+                                        </li>
+                                        <li class="item display g-10">
+                                            <h4 class="f-20" id="no-design"></h4>
+                                            <p class="f-16">Design</p>
+                                        </li>
+                                        <li class="item display g-10">
+                                            <h4 class="f-20" id="no-special"></h4>
+                                            <p class="f-16">Special Projects</p>
+                                        </li>
                                     </ul>
                                 </div>
                             </div>
-                        </li>
-                        <li class="sec06__item display jc-sb"><!--apc-->
-                            <img src="assets/edu/apc.png" alt="" class="school-img">
-                            <div class="sec06__desc">
-                                <h5 class="f-28"><span class="f-28b">Asia Pacific College</span> - Makati, Philippines</h5>
-                                <div class="sec06__info">
-                                    <h6 class="f-20">
-                                        Science, Technology, Engineering, and Mathematics  <br>
-                                        <!--<span class="italic">June 2016 - May 2018</span> -->
-                                    </h6>
+                        </section>
+                        <!-- socials -->
+                        <section class="socials display">
+                            <div class="content df fd-col g-30">
+                                <div class="title g-10 pink f-24b mont display">
+                                    <i class="fa-solid fa-share-nodes"></i>
+                                    <h3>Socials</h3>
                                 </div>
+                                <ul class="social_links df fd-col g-10">
+                                    <li class="item">
+                                        <a href="https://www.linkedin.com/in/nicole-anne-guzman/" target="_blank">
+                                            <div class="btn-socials display g-10">
+                                                <i class="fa-brands fa-linkedin"></i>
+                                                <p class="f-16">LinkedIn</p>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li class="item">
+                                        <a href="https://github.com/nclnngzmn" target="_blank">
+                                            <div class="btn-socials display g-10">
+                                                <i class="fa-brands fa-github"></i>
+                                                <p class="f-16">GitHub (nclnngzmn)</p>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li class="item">
+                                        <a href="https://gitlab.com/cloein" target="_blank">
+                                            <div class="btn-socials display g-10">
+                                                <i class="fa-brands fa-gitlab"></i>
+                                                <p class="f-16">GitLab (cloein)</p>
+                                            </div>
+                                        </a>
+                                    </li>
+                                </ul>
                             </div>
-                        </li>
-                    </ul>
+                        </section>
+                    </div>
                 </div>
-            </section>
 
-            <!--footer section-->
-            <footer>
-                <div class="footer__content w-1200" data-aos="fade-up" id="contact">
-                    <h1 class="f-64b montagu">Contact</h1>
-                    <ul class="footer__layout df">
-                        <li class="footer__item"><!--email-->
-                            <a href="mailto:guzmannicoleannerivera@gmail.com" target="_blank" class="footer__link display">
-                                <img src="assets/contact/contact-email.png" alt="" class="footer-icon">
-                                <div class="contact__info">
-                                    <h5 class="f-28b">Email</h5>
-                                    <p class="f-16">guzmannicoleannerivera@gmail.com</p>
-                                </div>
-                            </a>
-                        </li>
-                        <li class="footer__item"><!--github-->
-                            <a href="https://github.com/nclnngzmn" target="_blank" class="footer__link display">
-                                <img src="assets/contact/contact-github.png" alt="" class="footer-icon">
-                                <div class="contact__info">
-                                    <h5 class="f-28b">GitHub</h5>
-                                    <p class="f-16">nclnngzmn</p>
-                                </div>
-                            </a>
-                        </li>
-                        <li class="footer__item"><!--linkedin-->
-                            <a href="https://www.linkedin.com/in/nicole-anne-guzman/" target="_blank" class="footer__link display">
-                                <img src="assets/contact/contact-linkedin.png" alt="" class="footer-icon">
-                                <div class="contact__info">
-                                    <h5 class="f-28b">LinkedIn</h5>
-                                    <p class="f-16">www.linkedin.com/in/nicole-anne-guzman</p>
-                                </div>
-                            </a>
-                        </li>
-                        <li class="footer__item"><!--gitlab-->
-                            <a href="https://gitlab.com/cloein" target="_blank" class="footer__link display">
-                                <img src="assets/contact/contact-gitlab.png" alt="" class="footer-icon">
-                                <div class="contact__info">
-                                    <h5 class="f-28b">GitLab</h5>
-                                    <p class="f-16">@cloein</p>
-                                </div>
-                            </a>
-                        </li>
-                    </ul>
-                </div>
-            </section>
-            <!--end of footer section-->
-        </div>
+                <p class="copyright f-16 ta-c c-home">© 2025 Nicole Anne Guzman. All rights reserved.</p>
+            </div>
+        </main>
 
-        <!-- 必須なJS以下4つ -->
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-migrate/3.1.0/jquery-migrate.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.js" type="text/javascript"></script>
+        <!-- script -->
+        <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-+ZjWZrQy5RoZ0FS/6dEm6N7BVcJdYPZBPVU10KQJ4kE=" crossorigin="anonymous"></script>
+        <!-- <script src="https://code.jquery.com/jquery-migrate-3.4.1.min.js"></script> -->
         <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-        <script type="text/javascript" src="js/common.js"></script>
+        <script src="js/common.js" defer></script>
     </body>
 </html>
