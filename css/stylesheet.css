@@ -507,7 +507,7 @@ img {
 
 @media screen and (max-width: 1100px) {
 
-    .row1, .row2, .row4, .row5 {
+    .row1, .row2, .row3, .row5 {
         flex-direction: column;
     }
 
