@@ -470,6 +470,13 @@ img {
     flex: 1;
 }
 
+.proj-title-link {
+    transition: filter 0.3s ease, opacity 0.3s ease;
+}
+.proj-title-link:hover {
+    filter: brightness(1);
+    opacity: 0.5;
+}
 .projects-special .item .media video {
     width: 100%;
     height: auto;
