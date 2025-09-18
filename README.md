@@ -7,7 +7,6 @@ Built with **HTML5**, **CSS3**, and **vanilla JavaScript**, this responsive site
 
 - ✅ Clean, semantic HTML5 structure
 - 🎨 Responsive layout using modern CSS
-- 🔄 Pagination for project display
 - 🧭 Smooth navigation and interactive UI
 - 📱 Mobile-friendly design
 
