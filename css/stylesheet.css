@@ -598,4 +598,8 @@ img {
         display: none;
     }
 
+    .proj_tech {
+        flex-direction: column;
+    }
+
 }
