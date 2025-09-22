@@ -41,7 +41,7 @@ document.addEventListener('DOMContentLoaded', function () {
      ========================== */
 
     // fetch projects.html and parse project stats
-    fetch("projects.html")
+    fetch("/projects/index.html")
     .then(response => response.text())
     .then(html => {
         // create a temporary DOM to parse
