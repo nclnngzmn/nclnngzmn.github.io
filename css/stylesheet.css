@@ -470,10 +470,10 @@ img {
     flex: 1;
 }
 
-.proj-title-link {
+.proj-title-link, .company-link {
     transition: filter 0.3s ease, opacity 0.3s ease;
 }
-.proj-title-link:hover {
+.proj-title-link:hover, .company-link:hover {
     filter: brightness(1);
     opacity: 0.5;
 }
