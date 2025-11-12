@@ -298,7 +298,7 @@ img {
 }
 
 /* LIST */
-.more_details, .awards_list, .ed_info,
+.more_details, .more_details ul, .awards_list, .ed_info,
 .projects-special .item .desc .features ul {
     list-style: disc;
     list-style-position: outside; 
@@ -354,7 +354,8 @@ img {
     opacity: 0;      
 }
 .more_details.active {
-    max-height: 100px; 
+    /* max-height: 100px;  */
+    max-height: max-content;
     opacity: 1;
 }
 
@@ -525,9 +526,9 @@ img {
         align-items: center;
     }
 
-    .more_details.active {
+    /* .more_details.active {
         max-height: max-content;
-    }
+    } */
 
     .stats_socials {
         flex-direction: row;
