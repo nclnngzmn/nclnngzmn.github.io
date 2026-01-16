@@ -106,6 +106,11 @@ document.addEventListener('DOMContentLoaded', function () {
         }
         }
     });
+
+    /** =========================
+     *  updating the year on footer (copyright)
+     ========================== */
+    document.getElementById("year").textContent = new Date().getFullYear();
 });
 
 /** =========================
