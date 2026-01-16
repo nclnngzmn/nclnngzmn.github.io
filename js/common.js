@@ -4,6 +4,11 @@ document.addEventListener('DOMContentLoaded', function () {
     setTimeout(() => AOS.refresh(), 500);
 
     /** =========================
+     *  updating the year on footer (copyright)
+     ========================== */
+    document.getElementById("year").textContent = new Date().getFullYear();
+
+    /** =========================
      *  hero stats
      ========================== */
     // formatting large numbers
@@ -107,10 +112,6 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     });
 
-    /** =========================
-     *  updating the year on footer (copyright)
-     ========================== */
-    document.getElementById("year").textContent = new Date().getFullYear();
 });
 
 /** =========================
