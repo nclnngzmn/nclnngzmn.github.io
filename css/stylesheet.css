@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Montagu+Slab:opsz,wght@16..144,100..700&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Montagu+Slab:opsz,wght@16..144,100..700&display=swap');
 
 * {
     box-sizing: border-box;
@@ -18,7 +18,7 @@ body {
     transition: all 1ms ease 0s;
     background-color: #37222C;
     color: #F8F0F2;
-    font-family: "Open Sans", sans-serif;
+    font-family: "DM Sans", sans-serif;
 }   
 *, :before, ::after {
     background-repeat: no-repeat;
