@@ -496,6 +496,32 @@ img {
     border-bottom: 1px solid #E6B7BE;
 }
 
+.projects-category {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px; 
+    justify-content: center;
+    padding: 10px 0; 
+}
+.projects-category .item {
+    font-family: "DM Sans", sans-serif;
+    padding: 8px 20px;
+    background: transparent;
+    color: #F8F0F2;
+    border: 2px solid #E6B7BE;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    min-width: 120px; 
+    text-align: center; 
+}
+.projects-category .item.active,
+.projects-category .item:hover {
+    color: #37222C;
+    background: #E6B7BE;
+    border-color: #E6B7BE; 
+}
+
 /* --------------------------------------------------- RESPONSIVE PROPERTIES --------------------------------------------------- */
 
 @media screen and (max-width: 1500px) {
@@ -541,6 +567,12 @@ img {
     /* ========== SUBPAGES ========== */
     .sp_content.projects-archive {
         grid-template-columns: repeat(1, 1fr);
+    }
+
+    .projects-category .item {
+        flex: 1 1 100%; /* Stack the buttons on smaller screens */
+        min-width: auto; /* Let buttons take full width */
+        text-align: center; /* Ensure text is centered */
     }
 
 }

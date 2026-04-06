@@ -1,138 +1,199 @@
 document.addEventListener('DOMContentLoaded', function () {
-    // aos scroll animation
-    AOS.init({ duration: 1000 });
-    setTimeout(() => AOS.refresh(), 500);
+
+    console.log("COMMON JS LOADED");
 
     /** =========================
-     *  updating the year on footer (copyright)
+     * aos
      ========================== */
-    document.getElementById("year").textContent = new Date().getFullYear();
-
-    /** =========================
-     *  hero stats
-     ========================== */
-    // formatting large numbers
-    function formatNumber(num) {
-        if (num >= 1_000_000) return (num / 1_000_000).toFixed(1).replace(/\.0$/, '') + "M";
-        if (num >= 1_000) return (num / 1_000).toFixed(1).replace(/\.0$/, '') + "k";
-        return num;
+    if (typeof AOS !== "undefined") {
+        AOS.init({ duration: 1000 });
+        setTimeout(() => AOS.refresh(), 500);
     }
 
-    // experience
-    const startDate = new Date(2023, 10); // November 2023 (month is 0-based)
-    const currentDate = new Date();
-    const previousExperienceMonths = 3;
-    const previousExperienceYears = previousExperienceMonths / 12;
-    const diffInYears = (currentDate - startDate) / (1000 * 60 * 60 * 24 * 365.25);
-    const totalExperience = diffInYears + previousExperienceYears;
-    document.getElementById("experience-years").textContent =
-        (Math.floor(totalExperience * 10) / 10).toFixed(1) + "+";
-
-    // coffee counter
-    const collegeYears = 5;
-    const coffeeStartDate = new Date(currentDate.getFullYear() - collegeYears, 0, 1);
-    const coffeeDays = Math.floor((currentDate - coffeeStartDate) / (1000 * 60 * 60 * 24));
-    document.getElementById("coffee-count").textContent =
-        formatNumber(coffeeDays) + "+";
-
-    // code lines counter
-    const weeksSinceStart = Math.floor((currentDate - coffeeStartDate) / (1000 * 60 * 60 * 24 * 7));
-    const linesOfCode = weeksSinceStart * 5000;
-    document.getElementById("code-lines").textContent =
-        formatNumber(linesOfCode) + "+";
-
     /** =========================
-     *  crafted stats
+     * updating year (footer)
      ========================== */
-
-    // fetch projects.html and parse project stats
-    fetch("/projects/index.html")
-    .then(response => response.text())
-    .then(html => {
-        // create a temporary DOM to parse
-        const parser = new DOMParser();
-        const doc = parser.parseFromString(html, "text/html");
-
-        // select all project items from projects.html
-        const projectItems = doc.querySelectorAll(".projects-archive .item");
-
-        let websiteCount = 0;
-        let landingCount = 0;
-        let designCount = 0;
-        let specialCount = 0;
-
-        projectItems.forEach(item => {
-            const type = item.getAttribute("data-type");
-            if (type === "website") websiteCount++;
-            else if (type === "landing") landingCount++;
-            else if (type === "design") designCount++;
-            else if (type === "special") specialCount++;
-        });
-
-        // update counters on index.html
-        const websiteCounter = document.getElementById("no-websites");
-        const landingCounter = document.getElementById("no-landing");
-        const designCounter = document.getElementById("no-design");
-        const specialCounter = document.getElementById("no-special");
-
-        if (websiteCounter) websiteCounter.textContent = websiteCount + "+";
-        if (landingCounter) landingCounter.textContent = landingCount + "+";
-        if (designCounter) designCounter.textContent = designCount + "+";
-        if (specialCounter) specialCounter.textContent = specialCount + "+";
-    })
-    .catch(err => console.error("Error loading projects:", err));
+    const yearEl = document.getElementById("year");
+    if (yearEl) {
+        yearEl.textContent = new Date().getFullYear();
+    }
 
     /** =========================
-     *  playing video in special projects in full screen
+     * credentials counter
+     ========================== */
+    const expEl = document.getElementById("experience-years");
+    const coffeeEl = document.getElementById("coffee-count");
+    const codeEl = document.getElementById("code-lines");
+
+    if (expEl || coffeeEl || codeEl) {
+
+        function formatNumber(num) {
+            if (num >= 1_000_000) return (num / 1_000_000).toFixed(1).replace(/\.0$/, '') + "M";
+            if (num >= 1_000) return (num / 1_000).toFixed(1).replace(/\.0$/, '') + "k";
+            return num;
+        }
+
+        const startDate = new Date(2023, 10);
+        const currentDate = new Date();
+
+        // experience
+        if (expEl) {
+            const previousExperienceMonths = 3;
+            const previousExperienceYears = previousExperienceMonths / 12;
+            const diffInYears = (currentDate - startDate) / (1000 * 60 * 60 * 24 * 365.25);
+            const totalExperience = diffInYears + previousExperienceYears;
+
+            expEl.textContent =
+                (Math.floor(totalExperience * 10) / 10).toFixed(1) + "+";
+        }
+
+        // coffee
+        if (coffeeEl) {
+            const collegeYears = 5;
+            const coffeeStartDate = new Date(currentDate.getFullYear() - collegeYears, 0, 1);
+            const coffeeDays = Math.floor((currentDate - coffeeStartDate) / (1000 * 60 * 60 * 24));
+
+            coffeeEl.textContent = formatNumber(coffeeDays) + "+";
+        }
+
+        // code lines
+        if (codeEl) {
+            const collegeYears = 5;
+            const coffeeStartDate = new Date(currentDate.getFullYear() - collegeYears, 0, 1);
+            const weeksSinceStart = Math.floor((currentDate - coffeeStartDate) / (1000 * 60 * 60 * 24 * 7));
+            const linesOfCode = weeksSinceStart * 5000;
+
+            codeEl.textContent = formatNumber(linesOfCode) + "+";
+        }
+    }
+
+    /** =========================
+     * crafted counter
+     ========================== */
+    const hasStats =
+        document.getElementById("no-websites") ||
+        document.getElementById("no-landing") ||
+        document.getElementById("no-design") ||
+        document.getElementById("no-special");
+
+    if (hasStats) {
+        fetch("/projects/index.html")
+            .then(res => res.text())
+            .then(html => {
+                const parser = new DOMParser();
+                const doc = parser.parseFromString(html, "text/html");
+                const projectItems = doc.querySelectorAll(".projects-archive .item");
+
+                let counts = {
+                    website: 0,
+                    landing: 0,
+                    design: 0,
+                    special: 0
+                };
+
+                projectItems.forEach(item => {
+                    const type = item.getAttribute("data-type");
+                    if (counts[type] !== undefined) counts[type]++;
+                });
+
+                const map = {
+                    "no-websites": counts.website,
+                    "no-landing": counts.landing,
+                    "no-design": counts.design,
+                    "no-special": counts.special
+                };
+
+                Object.keys(map).forEach(id => {
+                    const el = document.getElementById(id);
+                    if (el) el.textContent = map[id] + "+";
+                });
+            })
+            .catch(err => console.error("Error loading projects:", err));
+    }
+
+    /** =========================
+     * video full screen
      ========================== */
     const video = document.getElementById("specialVId");
 
-    video.addEventListener("click", async () => {
-        if (window.innerWidth <= 500) {
-        try {
-            if (video.requestFullscreen) {
-                await video.requestFullscreen();
-            } else if (video.webkitRequestFullscreen) { 
-                await video.webkitRequestFullscreen();
-            }
+    if (video) {
+        video.addEventListener("click", async () => {
+            if (window.innerWidth <= 500) {
+                try {
+                    await (video.requestFullscreen?.() || video.webkitRequestFullscreen?.());
 
-            if (screen.orientation && screen.orientation.lock) {
-                await screen.orientation.lock("landscape");
+                    if (screen.orientation?.lock) {
+                        await screen.orientation.lock("landscape");
+                    }
+                } catch (err) {
+                    console.warn("Fullscreen/orientation not supported:", err);
+                }
+            } else {
+                if (document.fullscreenElement) {
+                    document.exitFullscreen();
+                } else {
+                    video.requestFullscreen?.();
+                }
             }
-        } catch (err) {
-            console.warn("Fullscreen/orientation not supported:", err);
-        }
-        } else {
+        });
+    }
 
-        if (document.fullscreenElement) {
-            document.exitFullscreen();
-        } else {
-            video.requestFullscreen?.();
+    /** =========================
+     * project filter buttons
+     ========================== */
+    const buttons = document.querySelectorAll(".projects-category .item");
+    const items = document.querySelectorAll(".projects-archive .item");
+
+    if (buttons.length && items.length) {
+        console.log("FILTER RUNNING");
+
+        function filterItems(category) {
+            items.forEach(item => {
+                const type = item.getAttribute("data-type");
+                item.style.display =
+                    (category === "all" || type === category) ? "block" : "none";
+            });
         }
-        }
-    });
+
+        buttons.forEach(btn => {
+            btn.addEventListener("click", function () {
+                buttons.forEach(b => b.classList.remove("active"));
+                this.classList.add("active");
+
+                filterItems(this.getAttribute("data-type"));
+            });
+        });
+
+        filterItems("all");
+    }
 
 });
 
 /** =========================
- *  view all button
+ * view more toggle
  ========================== */
 document.querySelectorAll('.btn-more').forEach(button => {
     button.addEventListener('click', () => {
-        const details = button.nextElementSibling; 
+        const details = button.nextElementSibling;
+        if (!details) return;
+
         details.classList.toggle('active');
 
         const icon = button.querySelector('i');
-        icon.classList.toggle('rotate');
-
         const text = button.querySelector('p');
-        text.textContent = details.classList.contains('active') ? 'See Less' : 'See More';
+
+        icon?.classList.toggle('rotate');
+        if (text) {
+            text.textContent =
+                details.classList.contains('active') ? 'See Less' : 'See More';
+        }
     });
 });
 
+
 /** =========================
- *  top button
+ * scroll on top
  ========================== */
-document.querySelector('.btn-top')?.addEventListener('click', function () {
+document.querySelector('.btn-top')?.addEventListener('click', () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
 });
